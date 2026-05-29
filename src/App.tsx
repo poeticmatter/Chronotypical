@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useNavigate, useSearchParams } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useNavigate, useSearchParams, Navigate } from 'react-router-dom';
 import { Onboarding } from './routes/Onboarding';
 import { TravelerMode } from './routes/TravelerMode';
 import { PartnerMode } from './routes/PartnerMode';
+import { Editor } from './routes/Editor';
 import { useStoryStore } from './store/useStoryStore';
 
 function Dispatcher() {
@@ -46,6 +47,10 @@ function App() {
         <Route path="/onboarding" element={<Onboarding />} />
         <Route path="/traveler" element={<TravelerMode />} />
         <Route path="/partner" element={<PartnerMode />} />
+        <Route
+          path="/editor"
+          element={import.meta.env.DEV ? <Editor /> : <Navigate to="/" replace />}
+        />
       </Routes>
     </BrowserRouter>
   );
