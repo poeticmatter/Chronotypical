@@ -1,0 +1,39 @@
+[
+  {
+    "id": "frag-001",
+    "chronological_order": 1,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [
+      "intro"
+    ],
+    "warnings": []
+  },
+  {
+    "id": "frag-002",
+    "chronological_order": 2,
+    "requires": [
+      "frag-001"
+    ],
+    "required_pool_count": 1,
+    "tags": [
+      "tension"
+    ],
+    "warnings": [
+      "mild anxiety"
+    ]
+  },
+  {
+    "id": "frag-003",
+    "chronological_order": 3,
+    "requires": [
+      "frag-001",
+      "frag-002"
+    ],
+    "required_pool_count": 2,
+    "tags": [
+      "travel"
+    ],
+    "warnings": []
+  }
+]
