@@ -1,5 +1,6 @@
 export interface FragmentMetadata {
   id: string;
+  title: string;
   chronological_order: number;
   requires: string[];
   required_pool_count: number;

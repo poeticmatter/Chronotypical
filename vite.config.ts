@@ -32,6 +32,7 @@ function localEditorPlugin(): Plugin {
                 id: data.id || file.replace('.mdx', ''),
                 metadata: {
                   id: data.id || file.replace('.mdx', ''),
+                  title: data.title || '',
                   chronological_order: data.chronological_order || 0,
                   requires: data.requires || [],
                   required_pool_count: data.required_pool_count || 0,
@@ -48,6 +49,24 @@ function localEditorPlugin(): Plugin {
             res.statusCode = 500;
             res.end(JSON.stringify({ error: 'Failed to read fragments' }));
           }
+          return;
+        }
+
+        // DELETE /api/fragments/:id
+        if (req.method === 'DELETE' && req.url.startsWith('/api/fragments/')) {
+          const id = req.url.split('/')[3];
+          if (!id) {
+            res.statusCode = 400;
+            return res.end(JSON.stringify({ error: 'Missing ID' }));
+          }
+          const filePath = path.join(contentDir, `${id}.mdx`);
+          if (!fs.existsSync(filePath)) {
+            res.statusCode = 404;
+            return res.end(JSON.stringify({ error: 'Fragment not found' }));
+          }
+          fs.unlinkSync(filePath);
+          res.setHeader('Content-Type', 'application/json');
+          res.end(JSON.stringify({ success: true }));
           return;
         }
 

@@ -14,6 +14,7 @@ interface EditorState {
 
   fetchFragments: () => Promise<void>;
   saveFragment: (id: string, metadata: FragmentMetadata, content: string) => Promise<void>;
+  deleteFragment: (id: string) => Promise<void>;
   setActiveFragment: (id: string) => void;
   createTemporaryFragment: () => void;
 }
@@ -50,6 +51,26 @@ export const useEditorStore = create<EditorState>((set, get) => ({
     }
   },
 
+  deleteFragment: async (id: string) => {
+    // For unsaved new fragments, just remove them from local state
+    if (id === 'NEW') {
+      set(state => ({
+        fragments: state.fragments.filter(f => f.id !== 'NEW'),
+        activeFragmentId: null,
+      }));
+      return;
+    }
+    try {
+      await fetch(`/api/fragments/${id}`, { method: 'DELETE' });
+      set(state => ({
+        fragments: state.fragments.filter(f => f.id !== id),
+        activeFragmentId: state.activeFragmentId === id ? null : state.activeFragmentId,
+      }));
+    } catch (error) {
+      console.error('Failed to delete fragment:', error);
+    }
+  },
+
   setActiveFragment: (id: string) => set({ activeFragmentId: id }),
 
   createTemporaryFragment: () => {
@@ -63,6 +84,7 @@ export const useEditorStore = create<EditorState>((set, get) => ({
       id: 'NEW', // Used just to trigger a distinct local state
       metadata: {
         id: newId,
+        title: '',
         chronological_order: newOrder,
         requires: [],
         required_pool_count: 0,

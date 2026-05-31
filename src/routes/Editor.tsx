@@ -5,9 +5,10 @@ import type { EditorFragment } from '../store/useEditorStore';
 export function Editor() {
   const store = useEditorStore();
 
+  const { fetchFragments } = store;
   useEffect(() => {
-    store.fetchFragments();
-  }, [store]);
+    fetchFragments();
+  }, [fetchFragments]);
 
   const sortedFragments = [...store.fragments].sort((a, b) =>
     a.metadata.chronological_order - b.metadata.chronological_order
@@ -41,14 +42,14 @@ export function Editor() {
               }`}
             >
               <div className="font-semibold text-gray-800 flex items-center justify-between">
-                <span>{frag.metadata.id}</span>
+                <span>{frag.metadata.title || frag.metadata.id}</span>
                 <div className="flex gap-1">
                    {frag.metadata.warnings.length > 0 && <span className="w-2 h-2 rounded-full bg-red-500" title="Has warnings" />}
                    {frag.metadata.requires.length > 0 && <span className="w-2 h-2 rounded-full bg-orange-400" title="Has dependencies" />}
                 </div>
               </div>
               <div className="text-gray-500 text-xs mt-1">
-                Order: {frag.metadata.chronological_order} | Pool: {frag.metadata.required_pool_count}
+                {frag.metadata.id} | Order: {frag.metadata.chronological_order} | Pool: {frag.metadata.required_pool_count}
               </div>
             </div>
           ))}
@@ -64,11 +65,11 @@ export function Editor() {
             allFragments={sortedFragments}
             onSave={async (metadata, content) => {
                await store.saveFragment(metadata.id, metadata, content);
-               // If it was a new fragment, switch to the real ID after saving
                if (activeFragment.id === 'NEW') {
                   store.setActiveFragment(metadata.id);
                }
             }}
+            onDelete={() => store.deleteFragment(activeFragment.id)}
             isSaving={store.isSaving}
           />
         ) : (
@@ -82,7 +83,7 @@ export function Editor() {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function EditorForm({ fragment, allFragments, onSave, isSaving }: { fragment: EditorFragment, allFragments: EditorFragment[], onSave: (m: any, c: string) => void, isSaving: boolean }) {
+function EditorForm({ fragment, allFragments, onSave, onDelete, isSaving }: { fragment: EditorFragment, allFragments: EditorFragment[], onSave: (m: any, c: string) => void, onDelete: () => void, isSaving: boolean }) {
   const [metadata, setMetadata] = useState(fragment.metadata);
   const [content, setContent] = useState(fragment.content);
   const [searchDep, setSearchDep] = useState('');
@@ -114,24 +115,38 @@ function EditorForm({ fragment, allFragments, onSave, isSaving }: { fragment: Ed
     <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-sm border border-gray-200 p-6 space-y-6">
       <div className="flex justify-between items-center border-b border-gray-100 pb-4">
         <h2 className="text-xl font-bold text-gray-800">
-          Editing {metadata.id}
+          {metadata.title || metadata.id}
         </h2>
-        <button
-          onClick={() => onSave(metadata, content)}
-          disabled={isSaving}
-          className="bg-gray-900 text-white px-4 py-2 rounded-md hover:bg-gray-800 disabled:opacity-50"
-        >
-          {isSaving ? 'Saving...' : 'Save Fragment'}
-        </button>
+        <div className="flex gap-2">
+          <button
+            onClick={() => {
+              if (confirm(`Delete "${metadata.title || metadata.id}"? This cannot be undone.`)) {
+                onDelete();
+              }
+            }}
+            disabled={isSaving}
+            className="border border-red-300 text-red-600 px-4 py-2 rounded-md hover:bg-red-50 disabled:opacity-50"
+          >
+            Delete
+          </button>
+          <button
+            onClick={() => onSave(metadata, content)}
+            disabled={isSaving}
+            className="bg-gray-900 text-white px-4 py-2 rounded-md hover:bg-gray-800 disabled:opacity-50"
+          >
+            {isSaving ? 'Saving...' : 'Save Fragment'}
+          </button>
+        </div>
       </div>
 
       <div className="grid grid-cols-2 gap-6">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Fragment ID</label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Title</label>
           <input
             type="text"
-            value={metadata.id}
-            onChange={e => setMetadata(m => ({ ...m, id: e.target.value }))}
+            value={metadata.title}
+            onChange={e => setMetadata(m => ({ ...m, title: e.target.value }))}
+            placeholder="Fragment title"
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-1 focus:ring-blue-500"
           />
         </div>
