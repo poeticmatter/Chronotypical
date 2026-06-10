@@ -452,7 +452,6 @@ function EditorForm({
     if (nextUnreviewedId) {
       store.setActiveFragment(nextUnreviewedId);
     } else {
-      alert("All fragments reviewed! Let's write another one.");
       store.createTemporaryFragment();
     }
   };

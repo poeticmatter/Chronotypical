@@ -55,7 +55,7 @@ export function FragmentViewer({
         </div>
       )}
 
-      <div className={`prose prose-gray max-w-none text-lg leading-relaxed ${!isRevealed ? 'blur-md select-none' : 'cursor-pointer'}`}>
+      <div className={`prose prose-gray max-w-none text-lg leading-relaxed whitespace-pre-wrap ${!isRevealed ? 'blur-md select-none' : 'cursor-pointer'}`}>
         {children}
       </div>
 
