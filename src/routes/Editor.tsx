@@ -315,12 +315,17 @@ function EditorForm({
     : [];
 
   const selectSuggestion = (tag: string) => {
-    setMetadata(prev => {
-      const currentTags = prev.tags || [];
-      const updatedTags = currentTags.includes(tag) ? currentTags : [...currentTags, tag];
-      setTagsInput(updatedTags.join(', ') + ', ');
-      return { ...prev, tags: updatedTags };
-    });
+    const parts = tagsInput.split(',').map(s => s.trim());
+    if (parts.length > 0) {
+      parts[parts.length - 1] = tag;
+    } else {
+      parts.push(tag);
+    }
+    const updatedTags = parts.filter(Boolean);
+    const newTagsInput = updatedTags.join(', ') + ', ';
+    
+    setTagsInput(newTagsInput);
+    setMetadata(prev => ({ ...prev, tags: updatedTags }));
   };
 
   const toggleRecommendedTag = (tag: string) => {

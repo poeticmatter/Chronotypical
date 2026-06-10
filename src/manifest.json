@@ -405,10 +405,12 @@
     "chronological_order": 39,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "explain-causality"
+    ],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-040",
@@ -418,8 +420,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "married",
+    "reviewed": true
   },
   {
     "id": "frag-041",
@@ -431,8 +433,8 @@
       "pregnancy"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "married",
+    "reviewed": true
   },
   {
     "id": "frag-042",
@@ -444,8 +446,8 @@
       "pregnancy"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "pregnancy",
+    "reviewed": true
   },
   {
     "id": "frag-043",
@@ -457,8 +459,8 @@
       "pregnancy"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "pregnancy",
+    "reviewed": true
   },
   {
     "id": "frag-044",
@@ -470,8 +472,8 @@
       "pregnancy"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-045",
@@ -481,8 +483,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "pregnancy",
+    "reviewed": true
   },
   {
     "id": "frag-046",
@@ -492,8 +494,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "partnered",
+    "reviewed": true
   },
   {
     "id": "frag-047",
@@ -503,8 +505,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "married",
+    "reviewed": true
   },
   {
     "id": "frag-048",
@@ -514,8 +516,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "pregnancy",
+    "reviewed": true
   },
   {
     "id": "frag-049",
@@ -527,8 +529,8 @@
       "pregnancy"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "pregnancy",
+    "reviewed": true
   },
   {
     "id": "frag-050",
@@ -540,8 +542,8 @@
       "family"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "courting",
+    "reviewed": true
   },
   {
     "id": "frag-051",
@@ -556,8 +558,8 @@
       "birth-trauma",
       "strong-language"
     ],
-    "stage": "",
-    "reviewed": false
+    "stage": "pregnancy",
+    "reviewed": true
   },
   {
     "id": "frag-052",
@@ -569,8 +571,8 @@
       "pregnancy"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-053",
@@ -582,8 +584,8 @@
       "parenting"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-054",
@@ -595,8 +597,8 @@
       "parenting"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-055",
@@ -608,8 +610,8 @@
       "pregnancy"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-056",
@@ -619,8 +621,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "later",
+    "reviewed": true
   },
   {
     "id": "frag-057",
@@ -628,10 +630,12 @@
     "chronological_order": 57,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "love"
+    ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "courting",
+    "reviewed": true
   },
   {
     "id": "frag-058",
@@ -643,8 +647,8 @@
       "death"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "partnered",
+    "reviewed": true
   },
   {
     "id": "frag-059",
@@ -656,8 +660,8 @@
       "parenting"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "pregnancy",
+    "reviewed": true
   },
   {
     "id": "frag-060",
@@ -665,10 +669,12 @@
     "chronological_order": 60,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "Memory"
+    ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "partnered",
+    "reviewed": true
   },
   {
     "id": "frag-061",
@@ -680,8 +686,8 @@
       "parenting"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-062",
@@ -689,23 +695,12 @@
     "chronological_order": 62,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
-    "warnings": [],
-    "stage": "",
-    "reviewed": false
-  },
-  {
-    "id": "frag-063",
-    "title": "I Know So",
-    "chronological_order": 63,
-    "requires": [],
-    "required_pool_count": 0,
     "tags": [
-      "parenting"
+      "hero"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "married",
+    "reviewed": true
   },
   {
     "id": "frag-064",
@@ -713,10 +708,12 @@
     "chronological_order": 64,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "Perspective"
+    ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "partnered",
+    "reviewed": true
   },
   {
     "id": "frag-065",
@@ -728,8 +725,8 @@
       "family"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-066",
@@ -737,12 +734,14 @@
     "chronological_order": 66,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "poly"
+    ],
     "warnings": [
       "open-relationship"
     ],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-067",
@@ -750,10 +749,12 @@
     "chronological_order": 67,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "poly"
+    ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-068",
@@ -761,10 +762,12 @@
     "chronological_order": 68,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "poly"
+    ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-069",
@@ -772,23 +775,12 @@
     "chronological_order": 69,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
-    "warnings": [],
-    "stage": "",
-    "reviewed": false
-  },
-  {
-    "id": "frag-070",
-    "title": "Does That Sound Like a Good Idea",
-    "chronological_order": 70,
-    "requires": [],
-    "required_pool_count": 0,
     "tags": [
-      "parenting"
+      "poly"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-071",
@@ -800,8 +792,8 @@
       "parenting"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-teen",
+    "reviewed": true
   },
   {
     "id": "frag-072",
@@ -809,10 +801,12 @@
     "chronological_order": 72,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "poly"
+    ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-073",
@@ -820,10 +814,12 @@
     "chronological_order": 73,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "poly"
+    ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-074",
@@ -831,10 +827,13 @@
     "chronological_order": 74,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "poly",
+      "Perspective"
+    ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-074b",
@@ -842,10 +841,12 @@
     "chronological_order": 74,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "poly"
+    ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-075",
@@ -855,14 +856,15 @@
     "required_pool_count": 0,
     "tags": [
       "death",
-      "grief"
+      "grief",
+      "poly"
     ],
     "warnings": [
       "death",
       "strong-language"
     ],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-076",
@@ -872,11 +874,12 @@
     "required_pool_count": 0,
     "tags": [
       "death",
-      "grief"
+      "grief",
+      "poly"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-077",
@@ -884,10 +887,12 @@
     "chronological_order": 77,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "poly"
+    ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-078",
@@ -897,11 +902,12 @@
     "required_pool_count": 0,
     "tags": [
       "family",
-      "grief"
+      "grief",
+      "poly"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-079",
@@ -913,8 +919,8 @@
       "parenting"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-080",
@@ -926,8 +932,8 @@
       "parenting"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-081",
@@ -939,8 +945,8 @@
       "parenting"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-083",
@@ -952,8 +958,8 @@
       "parenting"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-084",
@@ -965,8 +971,8 @@
       "parenting"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-085",
@@ -979,8 +985,8 @@
       "parenting"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-teen",
+    "reviewed": true
   },
   {
     "id": "frag-086",
@@ -988,16 +994,20 @@
     "chronological_order": 86,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "Perspective"
+    ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "married",
+    "reviewed": true
   },
   {
     "id": "frag-087",
     "title": "Fuck My Aunt",
     "chronological_order": 87,
-    "requires": [],
+    "requires": [
+      "Proposal"
+    ],
     "required_pool_count": 0,
     "tags": [
       "marriage"
@@ -1005,8 +1015,8 @@
     "warnings": [
       "strong-language"
     ],
-    "stage": "",
-    "reviewed": false
+    "stage": "partnered",
+    "reviewed": true
   },
   {
     "id": "frag-088",
@@ -1016,8 +1026,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "partnered",
+    "reviewed": true
   },
   {
     "id": "frag-089",
@@ -1029,8 +1039,8 @@
       "parenting"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-090",
@@ -1038,10 +1048,12 @@
     "chronological_order": 90,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "Perspective"
+    ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "married",
+    "reviewed": true
   },
   {
     "id": "frag-091",
@@ -1051,8 +1063,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "partnered",
+    "reviewed": true
   },
   {
     "id": "frag-092",
@@ -1062,8 +1074,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-teen",
+    "reviewed": true
   },
   {
     "id": "frag-093",
@@ -1071,10 +1083,12 @@
     "chronological_order": 93,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "Observant"
+    ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-094",
@@ -1087,8 +1101,8 @@
       "parenting"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-teen",
+    "reviewed": true
   },
   {
     "id": "frag-095",
@@ -1101,8 +1115,8 @@
       "parenting"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-teen",
+    "reviewed": true
   },
   {
     "id": "frag-096",
@@ -1112,8 +1126,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "partnered",
+    "reviewed": true
   },
   {
     "id": "frag-097",
@@ -1125,8 +1139,8 @@
       "parenting"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-098",
@@ -1139,8 +1153,8 @@
       "parenting"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-teen",
+    "reviewed": true
   },
   {
     "id": "frag-099",
@@ -1150,8 +1164,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "married",
+    "reviewed": true
   },
   {
     "id": "frag-100",
@@ -1161,8 +1175,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "partnered",
+    "reviewed": true
   },
   {
     "id": "frag-101",
@@ -1170,10 +1184,12 @@
     "chronological_order": 101,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "novel"
+    ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "married",
+    "reviewed": true
   },
   {
     "id": "frag-102",
@@ -1181,10 +1197,12 @@
     "chronological_order": 102,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "banter"
+    ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "married",
+    "reviewed": true
   },
   {
     "id": "frag-103",
@@ -1196,19 +1214,8 @@
       "lottery"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
-  },
-  {
-    "id": "frag-104",
-    "title": "First Memory",
-    "chronological_order": 104,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [],
-    "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "partnered",
+    "reviewed": true
   },
   {
     "id": "frag-105",
@@ -1218,8 +1225,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "courting",
+    "reviewed": true
   },
   {
     "id": "frag-106",
@@ -1229,8 +1236,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "partnered",
+    "reviewed": true
   },
   {
     "id": "frag-107",
@@ -1241,7 +1248,7 @@
     "tags": [],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-108",
@@ -1252,7 +1259,7 @@
     "tags": [],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-109",
@@ -1263,7 +1270,7 @@
     "tags": [],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-110",
@@ -1271,10 +1278,12 @@
     "chronological_order": 110,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "explain-memory"
+    ],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-111",
@@ -1284,8 +1293,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "partnered",
+    "reviewed": true
   },
   {
     "id": "frag-112",
@@ -1296,7 +1305,7 @@
     "tags": [],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-113",
@@ -1306,8 +1315,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "later",
+    "reviewed": true
   },
   {
     "id": "frag-114",
@@ -1318,7 +1327,7 @@
     "tags": [],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-115",
@@ -1328,8 +1337,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "courting",
+    "reviewed": true
   },
   {
     "id": "frag-116",
@@ -1340,18 +1349,7 @@
     "tags": [],
     "warnings": [],
     "stage": "",
-    "reviewed": false
-  },
-  {
-    "id": "frag-117",
-    "title": "First Real Memory",
-    "chronological_order": 117,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [],
-    "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-118",
@@ -1362,7 +1360,7 @@
     "tags": [],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-119",
@@ -1375,7 +1373,7 @@
     ],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-120",
@@ -1383,12 +1381,10 @@
     "chronological_order": 120,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [
-      "death"
-    ],
+    "tags": [],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-121",
@@ -1398,8 +1394,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "partnered",
+    "reviewed": true
   },
   {
     "id": "frag-122",
@@ -1410,7 +1406,7 @@
     "tags": [],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-123",
@@ -1418,10 +1414,12 @@
     "chronological_order": 123,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "banter"
+    ],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-124",
@@ -1431,8 +1429,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "courting",
+    "reviewed": true
   },
   {
     "id": "frag-125",
@@ -1443,7 +1441,7 @@
     "tags": [],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-126",
@@ -1454,7 +1452,7 @@
     "tags": [],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-127",
@@ -1464,8 +1462,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "courting",
+    "reviewed": true
   },
   {
     "id": "frag-128",
@@ -1477,8 +1475,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "courting",
+    "reviewed": true
   },
   {
     "id": "frag-129",
@@ -1492,7 +1490,7 @@
       "9-11"
     ],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-130",
@@ -1503,7 +1501,7 @@
     "tags": [],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-131",
@@ -1514,7 +1512,7 @@
     "tags": [],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-132",
@@ -1525,7 +1523,7 @@
     "tags": [],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-133",
@@ -1536,7 +1534,7 @@
     "tags": [],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-134",
@@ -1544,10 +1542,12 @@
     "chronological_order": 134,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "explain-causality"
+    ],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-135",
@@ -1558,7 +1558,7 @@
     "tags": [],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-136",
@@ -1569,7 +1569,7 @@
     "tags": [],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-137",
@@ -1582,7 +1582,7 @@
     ],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-138",
@@ -1595,7 +1595,7 @@
     ],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-139",
@@ -1608,7 +1608,7 @@
     ],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-140",
@@ -1619,7 +1619,7 @@
     "tags": [],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-141",
@@ -1629,8 +1629,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "later",
+    "reviewed": true
   },
   {
     "id": "frag-142",
@@ -1640,21 +1640,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
-  },
-  {
-    "id": "frag-142b",
-    "title": "Can't Always Be Here",
-    "chronological_order": 142,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [
-      "parenting"
-    ],
-    "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "later",
+    "reviewed": true
   },
   {
     "id": "frag-143",
@@ -1666,8 +1653,8 @@
       "parenting"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-144",
@@ -1679,8 +1666,8 @@
       "pregnancy"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "pregnancy",
+    "reviewed": true
   },
   {
     "id": "frag-145",
@@ -1689,11 +1676,12 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [
-      "pregnancy"
+      "pregnancy",
+      "explain-memory"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-146",
@@ -1704,7 +1692,7 @@
     "tags": [],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-147",
@@ -1714,8 +1702,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "partnered",
+    "reviewed": true
   },
   {
     "id": "frag-148",
@@ -1727,8 +1715,8 @@
       "parenting"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-149",
@@ -1739,7 +1727,7 @@
     "tags": [],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-150",
@@ -1751,8 +1739,8 @@
       "parenting"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-151",
@@ -1763,7 +1751,7 @@
     "tags": [],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-152",
@@ -1773,8 +1761,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "courting",
+    "reviewed": true
   },
   {
     "id": "frag-153",
@@ -1786,8 +1774,8 @@
       "death"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "partnered",
+    "reviewed": true
   },
   {
     "id": "frag-154",
@@ -1798,7 +1786,7 @@
     "tags": [],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-155",
@@ -1808,8 +1796,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "partnered",
+    "reviewed": true
   },
   {
     "id": "frag-156",
@@ -1821,8 +1809,8 @@
       "lottery"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "courting",
+    "reviewed": true
   },
   {
     "id": "frag-157",
@@ -1830,10 +1818,12 @@
     "chronological_order": 157,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "Perspective"
+    ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "partnered",
+    "reviewed": true
   },
   {
     "id": "frag-158",
@@ -1841,10 +1831,12 @@
     "chronological_order": 158,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "vegan"
+    ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "partnered",
+    "reviewed": true
   },
   {
     "id": "frag-159",
@@ -1856,8 +1848,8 @@
       "parenting"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-teen",
+    "reviewed": true
   },
   {
     "id": "frag-160",
@@ -1867,8 +1859,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-161",
@@ -1880,8 +1872,8 @@
       "parenting"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-162",
@@ -1893,8 +1885,8 @@
       "parenting"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-163",
@@ -1905,7 +1897,7 @@
     "tags": [],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-164",
@@ -1916,7 +1908,7 @@
     "tags": [],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-165",
@@ -1928,8 +1920,8 @@
       "parenting"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-166",
@@ -1940,7 +1932,7 @@
     "tags": [],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-167",
