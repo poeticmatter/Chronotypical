@@ -87,12 +87,23 @@ function EditorForm({ fragment, allFragments, onSave, onDelete, isSaving }: { fr
   const [metadata, setMetadata] = useState(fragment.metadata);
   const [content, setContent] = useState(fragment.content);
   const [searchDep, setSearchDep] = useState('');
+  const [searchTitle, setSearchTitle] = useState(true);
+  const [searchContent, setSearchContent] = useState(true);
+  const [searchTags, setSearchTags] = useState(true);
 
   const availableDeps = allFragments.filter(f => f.metadata.id !== metadata.id && f.id !== 'NEW');
 
-  const filteredDeps = availableDeps.filter(f =>
-    f.metadata.id.toLowerCase().includes(searchDep.toLowerCase())
-  );
+  const filteredDeps = availableDeps.filter(f => {
+    const query = searchDep.toLowerCase().trim();
+    if (!query) return true;
+
+    const idMatches = f.metadata.id.toLowerCase().includes(query);
+    const titleMatches = searchTitle && f.metadata.title.toLowerCase().includes(query);
+    const tagsMatches = searchTags && f.metadata.tags.some(t => t.toLowerCase().includes(query));
+    const contentMatches = searchContent && f.content.toLowerCase().includes(query);
+
+    return idMatches || titleMatches || tagsMatches || contentMatches;
+  });
 
   const toggleDependency = (depId: string) => {
     setMetadata(prev => {
@@ -189,26 +200,67 @@ function EditorForm({ fragment, allFragments, onSave, onDelete, isSaving }: { fr
 
         <div className="col-span-2">
           <label className="block text-sm font-medium text-gray-700 mb-2">Requires (Dependencies)</label>
-          <div className="border border-gray-300 rounded-md p-3 bg-gray-50 h-48 flex flex-col">
+          <div className="border border-gray-300 rounded-md p-3 bg-gray-50 h-64 flex flex-col">
             <input
               type="text"
               placeholder="Search dependencies..."
               value={searchDep}
               onChange={e => setSearchDep(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md mb-3 text-sm focus:ring-1 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md mb-2 text-sm focus:ring-1 focus:ring-blue-500"
             />
+            <div className="flex gap-4 mb-3 px-1 text-xs text-gray-600 font-sans select-none shrink-0">
+              <label className="flex items-center gap-1.5 cursor-pointer hover:text-gray-900 transition-colors">
+                <input
+                  type="checkbox"
+                  checked={searchTitle}
+                  onChange={e => setSearchTitle(e.target.checked)}
+                  className="rounded text-blue-600 focus:ring-blue-500"
+                />
+                Title
+              </label>
+              <label className="flex items-center gap-1.5 cursor-pointer hover:text-gray-900 transition-colors">
+                <input
+                  type="checkbox"
+                  checked={searchContent}
+                  onChange={e => setSearchContent(e.target.checked)}
+                  className="rounded text-blue-600 focus:ring-blue-500"
+                />
+                Content
+              </label>
+              <label className="flex items-center gap-1.5 cursor-pointer hover:text-gray-900 transition-colors">
+                <input
+                  type="checkbox"
+                  checked={searchTags}
+                  onChange={e => setSearchTags(e.target.checked)}
+                  className="rounded text-blue-600 focus:ring-blue-500"
+                />
+                Tags
+              </label>
+            </div>
             <div className="overflow-y-auto flex-1 space-y-2">
               {filteredDeps.map(dep => (
-                <label key={dep.metadata.id} className="flex items-center gap-2 cursor-pointer text-sm">
+                <label key={dep.metadata.id} className="flex items-start gap-2 cursor-pointer text-sm p-1.5 hover:bg-gray-100 rounded transition-colors">
                   <input
                     type="checkbox"
                     checked={metadata.requires.includes(dep.metadata.id)}
                     onChange={() => toggleDependency(dep.metadata.id)}
-                    className="rounded text-blue-600 focus:ring-blue-500"
+                    className="rounded text-blue-600 focus:ring-blue-500 mt-1"
                   />
-                  <span className={metadata.requires.includes(dep.metadata.id) ? 'font-semibold' : ''}>
-                    {dep.metadata.id} (Order: {dep.metadata.chronological_order})
-                  </span>
+                  <div className="flex-1 min-w-0">
+                    <span className={metadata.requires.includes(dep.metadata.id) ? 'font-semibold text-gray-900' : 'text-gray-700'}>
+                      {dep.metadata.id}: {dep.metadata.title || 'Untitled'}
+                    </span>
+                    <span className="text-gray-400 text-xs ml-2 whitespace-nowrap">(Order: {dep.metadata.chronological_order})</span>
+                    {dep.metadata.tags && dep.metadata.tags.length > 0 && (
+                      <div className="flex flex-wrap gap-1 mt-1">
+                        {dep.metadata.tags.map(t => (
+                          <span key={t} className="bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded text-[10px] uppercase font-semibold">
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </label>
               ))}
               {filteredDeps.length === 0 && <div className="text-gray-400 text-sm italic">No matching fragments</div>}
