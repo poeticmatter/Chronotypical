@@ -5,8 +5,12 @@
     "chronological_order": 2,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
-    "warnings": []
+    "tags": [
+      "Aphorism"
+    ],
+    "warnings": [],
+    "stage": "",
+    "reviewed": true
   },
   {
     "id": "frag-003",
@@ -15,7 +19,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-004",
@@ -23,8 +29,13 @@
     "chronological_order": 4,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
-    "warnings": []
+    "tags": [
+      "AP",
+      "Aphorism"
+    ],
+    "warnings": [],
+    "stage": "",
+    "reviewed": true
   },
   {
     "id": "frag-005",
@@ -32,8 +43,12 @@
     "chronological_order": 5,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
-    "warnings": []
+    "tags": [
+      "Aphorism"
+    ],
+    "warnings": [],
+    "stage": "",
+    "reviewed": true
   },
   {
     "id": "frag-006",
@@ -41,8 +56,12 @@
     "chronological_order": 6,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
-    "warnings": []
+    "tags": [
+      "Aphorism"
+    ],
+    "warnings": [],
+    "stage": "",
+    "reviewed": true
   },
   {
     "id": "frag-007",
@@ -50,17 +69,12 @@
     "chronological_order": 7,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
-    "warnings": []
-  },
-  {
-    "id": "frag-008",
-    "title": "The Hotel Lobby",
-    "chronological_order": 8,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [],
-    "warnings": []
+    "tags": [
+      "Aphorism"
+    ],
+    "warnings": [],
+    "stage": "",
+    "reviewed": true
   },
   {
     "id": "frag-009",
@@ -68,28 +82,12 @@
     "chronological_order": 9,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
-    "warnings": []
-  },
-  {
-    "id": "frag-010",
-    "title": "Heart Attack Tomorrow",
-    "chronological_order": 10,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [],
-    "warnings": [
-      "strong-language"
-    ]
-  },
-  {
-    "id": "frag-011",
-    "title": "Missing the Train",
-    "chronological_order": 11,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [],
-    "warnings": []
+    "tags": [
+      "Soliloquy"
+    ],
+    "warnings": [],
+    "stage": "",
+    "reviewed": true
   },
   {
     "id": "frag-012",
@@ -98,18 +96,11 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [
-      "lottery"
+      "Soliloquy"
     ],
-    "warnings": []
-  },
-  {
-    "id": "frag-013",
-    "title": "Talking to Myself",
-    "chronological_order": 13,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": true
   },
   {
     "id": "frag-014",
@@ -117,17 +108,12 @@
     "chronological_order": 14,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
-    "warnings": []
-  },
-  {
-    "id": "frag-015",
-    "title": "The Funny Loop",
-    "chronological_order": 15,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [],
-    "warnings": []
+    "tags": [
+      "Health"
+    ],
+    "warnings": [],
+    "stage": "married",
+    "reviewed": true
   },
   {
     "id": "frag-016",
@@ -135,10 +121,14 @@
     "chronological_order": 16,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "Sex"
+    ],
     "warnings": [
       "sexual-content"
-    ]
+    ],
+    "stage": "married",
+    "reviewed": true
   },
   {
     "id": "frag-017",
@@ -146,8 +136,12 @@
     "chronological_order": 17,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
-    "warnings": []
+    "tags": [
+      "explain-causality"
+    ],
+    "warnings": [],
+    "stage": "married",
+    "reviewed": true
   },
   {
     "id": "frag-018",
@@ -156,7 +150,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-019",
@@ -165,7 +161,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-020",
@@ -174,7 +172,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-021",
@@ -183,7 +183,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-022",
@@ -192,7 +194,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-023",
@@ -201,7 +205,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-024",
@@ -210,7 +216,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-025",
@@ -219,7 +227,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-026",
@@ -228,7 +238,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-027",
@@ -237,7 +249,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-028",
@@ -246,7 +260,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-029",
@@ -255,7 +271,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-030",
@@ -264,7 +282,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-031",
@@ -275,7 +295,9 @@
     "tags": [
       "family"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-032",
@@ -284,7 +306,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-033",
@@ -297,7 +321,9 @@
     ],
     "warnings": [
       "sexual-content"
-    ]
+    ],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-034",
@@ -308,7 +334,9 @@
     "tags": [
       "death"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-035",
@@ -319,7 +347,9 @@
     "tags": [
       "death"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-036",
@@ -332,7 +362,9 @@
     ],
     "warnings": [
       "sexual-content"
-    ]
+    ],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-037",
@@ -343,7 +375,9 @@
     "tags": [
       "trans"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-038",
@@ -352,7 +386,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-039",
@@ -361,7 +397,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-040",
@@ -370,7 +408,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-041",
@@ -381,7 +421,9 @@
     "tags": [
       "pregnancy"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-042",
@@ -392,7 +434,9 @@
     "tags": [
       "pregnancy"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-043",
@@ -403,7 +447,9 @@
     "tags": [
       "pregnancy"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-044",
@@ -414,7 +460,9 @@
     "tags": [
       "pregnancy"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-045",
@@ -423,7 +471,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-046",
@@ -432,7 +482,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-047",
@@ -441,7 +493,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-048",
@@ -450,7 +504,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-049",
@@ -461,7 +517,9 @@
     "tags": [
       "pregnancy"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-050",
@@ -472,7 +530,9 @@
     "tags": [
       "family"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-051",
@@ -486,7 +546,9 @@
     "warnings": [
       "birth-trauma",
       "strong-language"
-    ]
+    ],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-052",
@@ -497,7 +559,9 @@
     "tags": [
       "pregnancy"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-053",
@@ -508,7 +572,9 @@
     "tags": [
       "parenting"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-054",
@@ -519,7 +585,9 @@
     "tags": [
       "parenting"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-055",
@@ -530,7 +598,9 @@
     "tags": [
       "pregnancy"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-056",
@@ -539,7 +609,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-057",
@@ -548,7 +620,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-058",
@@ -559,7 +633,9 @@
     "tags": [
       "death"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-059",
@@ -570,7 +646,9 @@
     "tags": [
       "parenting"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-060",
@@ -579,7 +657,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-061",
@@ -590,7 +670,9 @@
     "tags": [
       "parenting"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-062",
@@ -599,7 +681,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-063",
@@ -610,7 +694,9 @@
     "tags": [
       "parenting"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-064",
@@ -619,7 +705,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-065",
@@ -630,7 +718,9 @@
     "tags": [
       "family"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-066",
@@ -641,7 +731,9 @@
     "tags": [],
     "warnings": [
       "open-relationship"
-    ]
+    ],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-067",
@@ -650,7 +742,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-068",
@@ -659,7 +753,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-069",
@@ -668,7 +764,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-070",
@@ -679,7 +777,9 @@
     "tags": [
       "parenting"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-071",
@@ -690,7 +790,9 @@
     "tags": [
       "parenting"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-072",
@@ -699,7 +801,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-073",
@@ -708,7 +812,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-074",
@@ -717,7 +823,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-074b",
@@ -726,7 +834,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-075",
@@ -741,7 +851,9 @@
     "warnings": [
       "death",
       "strong-language"
-    ]
+    ],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-076",
@@ -753,7 +865,9 @@
       "death",
       "grief"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-077",
@@ -762,7 +876,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-078",
@@ -774,7 +890,9 @@
       "family",
       "grief"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-079",
@@ -785,7 +903,9 @@
     "tags": [
       "parenting"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-080",
@@ -796,7 +916,9 @@
     "tags": [
       "parenting"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-081",
@@ -807,7 +929,9 @@
     "tags": [
       "parenting"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-083",
@@ -818,7 +942,9 @@
     "tags": [
       "parenting"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-084",
@@ -829,7 +955,9 @@
     "tags": [
       "parenting"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-085",
@@ -841,7 +969,9 @@
       "trans",
       "parenting"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-086",
@@ -850,7 +980,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-087",
@@ -863,7 +995,9 @@
     ],
     "warnings": [
       "strong-language"
-    ]
+    ],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-088",
@@ -872,7 +1006,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-089",
@@ -883,7 +1019,9 @@
     "tags": [
       "parenting"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-090",
@@ -892,7 +1030,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-091",
@@ -901,7 +1041,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-092",
@@ -910,7 +1052,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-093",
@@ -919,7 +1063,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-094",
@@ -931,7 +1077,9 @@
       "trans",
       "parenting"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-095",
@@ -943,7 +1091,9 @@
       "trans",
       "parenting"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-096",
@@ -952,7 +1102,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-097",
@@ -963,7 +1115,9 @@
     "tags": [
       "parenting"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-098",
@@ -975,7 +1129,9 @@
       "trans",
       "parenting"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-099",
@@ -984,7 +1140,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-100",
@@ -993,7 +1151,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-101",
@@ -1002,7 +1162,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-102",
@@ -1011,7 +1173,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-103",
@@ -1022,7 +1186,9 @@
     "tags": [
       "lottery"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-104",
@@ -1031,7 +1197,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-105",
@@ -1040,7 +1208,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-106",
@@ -1049,7 +1219,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-107",
@@ -1058,7 +1230,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-108",
@@ -1067,7 +1241,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-109",
@@ -1076,7 +1252,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-110",
@@ -1085,7 +1263,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-111",
@@ -1094,7 +1274,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-112",
@@ -1103,7 +1285,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-113",
@@ -1112,7 +1296,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-114",
@@ -1121,7 +1307,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-115",
@@ -1130,7 +1318,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-116",
@@ -1139,7 +1329,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-117",
@@ -1148,7 +1340,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-118",
@@ -1157,7 +1351,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-119",
@@ -1168,7 +1364,9 @@
     "tags": [
       "parenting"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-120",
@@ -1179,7 +1377,9 @@
     "tags": [
       "death"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-121",
@@ -1188,7 +1388,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-122",
@@ -1197,7 +1399,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-123",
@@ -1206,7 +1410,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-124",
@@ -1215,7 +1421,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-125",
@@ -1224,7 +1432,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-126",
@@ -1233,7 +1443,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-127",
@@ -1242,7 +1454,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-128",
@@ -1253,7 +1467,9 @@
     ],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-129",
@@ -1265,7 +1481,9 @@
     "warnings": [
       "terrorism",
       "9-11"
-    ]
+    ],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-130",
@@ -1274,7 +1492,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-131",
@@ -1283,7 +1503,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-132",
@@ -1292,7 +1514,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-133",
@@ -1301,7 +1525,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-134",
@@ -1310,7 +1536,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-135",
@@ -1319,7 +1547,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-136",
@@ -1328,7 +1558,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-137",
@@ -1339,7 +1571,9 @@
     "tags": [
       "simulation"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-138",
@@ -1350,7 +1584,9 @@
     "tags": [
       "simulation"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-139",
@@ -1361,7 +1597,9 @@
     "tags": [
       "simulation"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-140",
@@ -1370,7 +1608,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-141",
@@ -1379,7 +1619,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-142",
@@ -1388,7 +1630,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-142b",
@@ -1399,7 +1643,9 @@
     "tags": [
       "parenting"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-143",
@@ -1410,7 +1656,9 @@
     "tags": [
       "parenting"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-144",
@@ -1421,7 +1669,9 @@
     "tags": [
       "pregnancy"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-145",
@@ -1432,7 +1682,9 @@
     "tags": [
       "pregnancy"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-146",
@@ -1441,7 +1693,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-147",
@@ -1450,7 +1704,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-148",
@@ -1461,7 +1717,9 @@
     "tags": [
       "parenting"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-149",
@@ -1470,7 +1728,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-150",
@@ -1481,7 +1741,9 @@
     "tags": [
       "parenting"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-151",
@@ -1490,7 +1752,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-152",
@@ -1499,7 +1763,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-153",
@@ -1510,7 +1776,9 @@
     "tags": [
       "death"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-154",
@@ -1519,7 +1787,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-155",
@@ -1528,7 +1798,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-156",
@@ -1539,7 +1811,9 @@
     "tags": [
       "lottery"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-157",
@@ -1548,7 +1822,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-158",
@@ -1557,7 +1833,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-159",
@@ -1568,7 +1846,9 @@
     "tags": [
       "parenting"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-160",
@@ -1577,7 +1857,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-161",
@@ -1588,7 +1870,9 @@
     "tags": [
       "parenting"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-162",
@@ -1599,7 +1883,9 @@
     "tags": [
       "parenting"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-163",
@@ -1608,7 +1894,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-164",
@@ -1617,7 +1905,9 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-165",
@@ -1628,7 +1918,9 @@
     "tags": [
       "parenting"
     ],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   },
   {
     "id": "frag-166",
@@ -1637,6 +1929,8 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
-    "warnings": []
+    "warnings": [],
+    "stage": "",
+    "reviewed": false
   }
 ]

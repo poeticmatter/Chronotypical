@@ -38,6 +38,8 @@ function localEditorPlugin(): Plugin {
                   required_pool_count: data.required_pool_count || 0,
                   tags: data.tags || [],
                   warnings: data.warnings || [],
+                  stage: data.stage || '',
+                  reviewed: data.reviewed || false,
                 },
                 content: content.trim()
               };

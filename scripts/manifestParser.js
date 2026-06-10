@@ -28,6 +28,8 @@ function buildManifest() {
     const required_pool_count = data.required_pool_count || 0;
     const tags = data.tags || [];
     const warnings = data.warnings || [];
+    const stage = data.stage || '';
+    const reviewed = data.reviewed === true;
 
     manifest.push({
       id,
@@ -36,7 +38,9 @@ function buildManifest() {
       requires,
       required_pool_count,
       tags,
-      warnings
+      warnings,
+      stage,
+      reviewed
     });
   }
 

@@ -6,4 +6,7 @@ export interface FragmentMetadata {
   required_pool_count: number;
   tags: string[];
   warnings: string[];
+  stage?: string;
+  reviewed?: boolean;
 }
+
