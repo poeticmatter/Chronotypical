@@ -285,7 +285,6 @@ function EditorForm({
   const [content, setContent] = useState(fragment.content);
   const [isAdvancedExpanded, setIsAdvancedExpanded] = useState(false);
   const [searchTagQuery, setSearchTagQuery] = useState('');
-  const [newStageInput, setNewStageInput] = useState('');
   const [tagsInput, setTagsInput] = useState((fragment.metadata.tags || []).join(', '));
   const [isTagsFocused, setIsTagsFocused] = useState(false);
 
@@ -343,29 +342,15 @@ function EditorForm({
     setMetadata(prev => ({ ...prev, tags: arr }));
   };
 
-  const DEFAULT_STAGES = ['before', 'courting', 'married', 'pregnancy', 'parenting-young', 'parenting-teen', 'later'];
-  const customStages = allFragments.map(f => f.metadata.stage).filter(s => s && !DEFAULT_STAGES.includes(s));
-  const stagesList = Array.from(new Set(customStages)) as string[];
-  const allStages = [...DEFAULT_STAGES, ...stagesList];
+  const STAGES = ['before', 'courting', 'partnered', 'married', 'pregnancy', 'parenting-young', 'parenting-teen', 'later'];
 
   const stageOptions = [
     { value: '', label: 'Select Stage (None)' },
-    ...allStages.map(stage => ({
+    ...STAGES.map(stage => ({
       value: stage,
       label: stage.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
     }))
   ];
-
-  const handleAddCustomStage = () => {
-    const cleanStage = newStageInput.trim().toLowerCase().replace(/\s+/g, '-');
-    if (cleanStage && !allStages.includes(cleanStage)) {
-      setMetadata(prev => ({ ...prev, stage: cleanStage }));
-      setNewStageInput('');
-    } else if (cleanStage) {
-      setMetadata(prev => ({ ...prev, stage: cleanStage }));
-      setNewStageInput('');
-    }
-  };
 
   // Values from local state vs initial fragment props to determine dirty state
   const isDirty = JSON.stringify(metadata) !== JSON.stringify(fragment.metadata) || content !== fragment.content;
@@ -780,32 +765,7 @@ function EditorForm({
                       className="w-full px-3 py-2 bg-slate-950/60 border border-slate-800 rounded-lg text-sm text-slate-200 focus:outline-none focus:ring-1 focus:ring-indigo-500"
                     />
                   </div>
-                  <div className="space-y-1">
-                    <label className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Add Custom Stage</label>
-                    <div className="flex gap-2">
-                      <input
-                        type="text"
-                        value={newStageInput}
-                        onChange={e => setNewStageInput(e.target.value)}
-                        placeholder="e.g. empty-nest"
-                        className="flex-1 px-3 py-2 bg-slate-950/60 border border-slate-800 rounded-lg text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:ring-1 focus:ring-indigo-500"
-                        onKeyDown={e => {
-                          if (e.key === 'Enter') {
-                            e.preventDefault();
-                            handleAddCustomStage();
-                          }
-                        }}
-                      />
-                      <button
-                        type="button"
-                        onClick={handleAddCustomStage}
-                        className="bg-indigo-600 hover:bg-indigo-500 text-white px-3 py-2 rounded-lg text-xs font-semibold transition-colors shrink-0"
-                      >
-                        Add
-                      </button>
-                    </div>
-                  </div>
-                  <div className="space-y-1">
+                  <div className="space-y-1 md:col-span-2">
                     <label className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Warnings (comma separated)</label>
                     <input
                       type="text"
