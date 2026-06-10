@@ -20,8 +20,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "courting",
+    "reviewed": true
   },
   {
     "id": "frag-004",
@@ -149,10 +149,12 @@
     "chronological_order": 18,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "Paradox"
+    ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "partnered",
+    "reviewed": true
   },
   {
     "id": "frag-019",
@@ -160,10 +162,12 @@
     "chronological_order": 19,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "flashforward"
+    ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "partnered",
+    "reviewed": true
   },
   {
     "id": "frag-020",
@@ -173,8 +177,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "partnered",
+    "reviewed": true
   },
   {
     "id": "frag-021",
@@ -182,10 +186,12 @@
     "chronological_order": 21,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "pasta"
+    ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "partnered",
+    "reviewed": true
   },
   {
     "id": "frag-022",
@@ -193,21 +199,12 @@
     "chronological_order": 22,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "Aphorism"
+    ],
     "warnings": [],
     "stage": "",
-    "reviewed": false
-  },
-  {
-    "id": "frag-023",
-    "title": "The Future Journal",
-    "chronological_order": 23,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [],
-    "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-024",
@@ -217,8 +214,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "courting",
+    "reviewed": true
   },
   {
     "id": "frag-025",
@@ -226,10 +223,12 @@
     "chronological_order": 25,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "Pasta"
+    ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "partnered",
+    "reviewed": true
   },
   {
     "id": "frag-026",
@@ -237,10 +236,12 @@
     "chronological_order": 26,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "explain-futuresight"
+    ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "courting",
+    "reviewed": true
   },
   {
     "id": "frag-027",
@@ -248,10 +249,12 @@
     "chronological_order": 27,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "Perspective"
+    ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "married",
+    "reviewed": true
   },
   {
     "id": "frag-028",
@@ -261,8 +264,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "partnered",
+    "reviewed": true
   },
   {
     "id": "frag-029",
@@ -270,10 +273,12 @@
     "chronological_order": 29,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "Perspective"
+    ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "partnered",
+    "reviewed": true
   },
   {
     "id": "frag-030",
@@ -283,8 +288,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "courting",
+    "reviewed": true
   },
   {
     "id": "frag-031",
@@ -296,8 +301,8 @@
       "family"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "courting",
+    "reviewed": true
   },
   {
     "id": "frag-032",
@@ -307,8 +312,8 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "partnered",
+    "reviewed": true
   },
   {
     "id": "frag-033",
@@ -317,13 +322,14 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [
-      "marriage"
+      "Proposal",
+      "Surprise"
     ],
     "warnings": [
       "sexual-content"
     ],
-    "stage": "",
-    "reviewed": false
+    "stage": "partnered",
+    "reviewed": true
   },
   {
     "id": "frag-034",
@@ -335,8 +341,8 @@
       "death"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "courting",
+    "reviewed": true
   },
   {
     "id": "frag-035",
@@ -348,8 +354,8 @@
       "death"
     ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "parenting-young",
+    "reviewed": true
   },
   {
     "id": "frag-036",
@@ -358,13 +364,14 @@
     "requires": [],
     "required_pool_count": 0,
     "tags": [
-      "pregnancy"
+      "pregnancy",
+      "sex"
     ],
     "warnings": [
       "sexual-content"
     ],
-    "stage": "",
-    "reviewed": false
+    "stage": "married",
+    "reviewed": true
   },
   {
     "id": "frag-037",
@@ -377,7 +384,7 @@
     ],
     "warnings": [],
     "stage": "",
-    "reviewed": false
+    "reviewed": true
   },
   {
     "id": "frag-038",
@@ -385,10 +392,12 @@
     "chronological_order": 38,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "Downside"
+    ],
     "warnings": [],
-    "stage": "",
-    "reviewed": false
+    "stage": "partnered",
+    "reviewed": true
   },
   {
     "id": "frag-039",
@@ -1932,5 +1941,18 @@
     "warnings": [],
     "stage": "",
     "reviewed": false
+  },
+  {
+    "id": "frag-167",
+    "title": "",
+    "chronological_order": 167,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [
+      "explain-futuresight"
+    ],
+    "warnings": [],
+    "stage": "courting",
+    "reviewed": true
   }
 ]
