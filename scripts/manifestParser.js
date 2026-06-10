@@ -22,6 +22,7 @@ function buildManifest() {
 
     // Validate and extract frontmatter
     const id = data.id || file.replace('.mdx', '');
+    const title = data.title || '';
     const chronological_order = data.chronological_order || 0;
     const requires = data.requires || [];
     const required_pool_count = data.required_pool_count || 0;
@@ -30,6 +31,7 @@ function buildManifest() {
 
     manifest.push({
       id,
+      title,
       chronological_order,
       requires,
       required_pool_count,
