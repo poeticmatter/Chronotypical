@@ -12,8 +12,8 @@ function Dispatcher() {
   const store = useStoryStore();
 
   useEffect(() => {
-    // If missing identity, go to onboarding
-    if (!store.names.protagonist || !store.names.partner) {
+    // If missing calibration seed, go to onboarding
+    if (!store.seed) {
       // Pass along the seed if it exists so onboarding can catch it
       const seed = searchParams.get('seed');
       navigate(seed ? `/onboarding?seed=${seed}` : '/onboarding');

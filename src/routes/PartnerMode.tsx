@@ -19,10 +19,10 @@ export function PartnerMode() {
   );
 
   useEffect(() => {
-    if (!store.names.protagonist) {
+    if (!store.seed) {
       navigate('/onboarding');
     }
-  }, [store.names.protagonist, navigate]);
+  }, [store.seed, navigate]);
 
   if (currentIndex >= manifest.length) {
     return (
@@ -80,10 +80,7 @@ function PartnerFragmentRenderer({ meta, store, currentIndex, setCurrentIndex, m
             onAdvance={handleAdvance}
             onSkip={handleSkip}
           >
-            <MDXComponent
-              protagonist_name={store.names.protagonist}
-              partner_name={store.names.partner}
-            />
+            <MDXComponent />
           </FragmentViewer>
         )}
       </Suspense>

@@ -72,6 +72,46 @@ function localEditorPlugin(): Plugin {
           return;
         }
 
+        // POST /api/fragments/batch-update
+        if (req.method === 'POST' && req.url === '/api/fragments/batch-update') {
+          let body = '';
+          req.on('data', chunk => {
+            body += chunk.toString();
+          });
+          req.on('end', () => {
+            try {
+              const { updates } = JSON.parse(body);
+              if (!Array.isArray(updates)) {
+                res.statusCode = 400;
+                return res.end(JSON.stringify({ error: 'Updates must be an array' }));
+              }
+
+              for (const update of updates) {
+                const { id, metadata, content } = update;
+                const filePath = path.join(contentDir, `${id}.mdx`);
+                const fileContent = matter.stringify(content, metadata);
+                fs.writeFileSync(filePath, fileContent);
+              }
+
+              // Run manifest parser once
+              const buildManifestPath = path.resolve(__dirname, 'scripts/manifestParser.js');
+              import('child_process').then(cp => {
+                 cp.exec(`node ${buildManifestPath}`, (err) => {
+                     if(err) console.error("Error building manifest after batch save", err);
+                 });
+              });
+
+              res.setHeader('Content-Type', 'application/json');
+              res.end(JSON.stringify({ success: true }));
+            } catch (e) {
+              console.error(e);
+              res.statusCode = 500;
+              res.end(JSON.stringify({ error: 'Failed to batch save fragments' }));
+            }
+          });
+          return;
+        }
+
         // POST /api/fragments/:id
         if (req.method === 'POST' && req.url.startsWith('/api/fragments/')) {
           const id = req.url.split('/')[3];

@@ -11,7 +11,7 @@ export function TravelerMode() {
   const navigate = useNavigate();
   const store = useStoryStore();
   useEffect(() => {
-    if (!store.names.protagonist || !store.seed) {
+    if (!store.seed) {
       // Preserve the seed if we have one in the URL when redirecting to onboarding
       const searchParams = new URLSearchParams(window.location.search);
       const urlSeed = searchParams.get('seed');
@@ -21,7 +21,7 @@ export function TravelerMode() {
         navigate('/onboarding');
       }
     }
-  }, [store.names.protagonist, store.seed, navigate]);
+  }, [store.seed, navigate]);
 
   const currentFragId = store.seed ? getNextDeterministicFragment(
     manifest as FragmentMetadata[],
@@ -78,10 +78,7 @@ function TravelerFragmentRenderer({ currentFragId, meta, store }: { currentFragI
           onAdvance={handleAdvance}
           onSkip={handleSkip}
         >
-          <MDXComponent
-            protagonist_name={store.names.protagonist}
-            partner_name={store.names.partner}
-          />
+          <MDXComponent />
         </FragmentViewer>
       </Suspense>
     </Layout>

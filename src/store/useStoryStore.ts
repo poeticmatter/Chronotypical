@@ -4,10 +4,6 @@ import { persist } from 'zustand/middleware';
 interface StoryState {
   // Global & Identity
   seed: string | null;
-  names: {
-    protagonist: string;
-    partner: string;
-  };
   showChronologicalAnchor: boolean;
 
   // Mode 1: Time Traveler Progression
@@ -22,7 +18,6 @@ interface StoryState {
 
   // Actions
   initializeSeed: (seed: string) => void;
-  setNames: (names: Partial<StoryState['names']>) => void;
   toggleChronologicalAnchor: (val: boolean) => void;
   markTravelerRead: (id: string) => void;
   updatePartnerProgress: (id: number) => void;
@@ -31,10 +26,6 @@ interface StoryState {
 
 const initialState = {
   seed: null,
-  names: {
-    protagonist: '',
-    partner: '',
-  },
   showChronologicalAnchor: false,
   traveler: {
     readFragments: [],
@@ -49,10 +40,6 @@ export const useStoryStore = create<StoryState>()(
     (set) => ({
       ...initialState,
       initializeSeed: (seed) => set({ seed }),
-      setNames: (names) =>
-        set((state) => ({
-          names: { ...state.names, ...names },
-        })),
       toggleChronologicalAnchor: (val) => set({ showChronologicalAnchor: val }),
       markTravelerRead: (id) =>
         set((state) => ({

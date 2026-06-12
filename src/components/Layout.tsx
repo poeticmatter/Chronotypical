@@ -11,7 +11,7 @@ export function Layout({ children }: LayoutProps) {
   const navigate = useNavigate();
   const store = useStoryStore();
 
-  const isCalibrated = !!(store.names.protagonist && store.names.partner && store.seed);
+  const isCalibrated = !!store.seed;
   const currentPath = location.pathname;
 
   // Mode Handlers

@@ -14,6 +14,7 @@ interface EditorState {
 
   fetchFragments: () => Promise<void>;
   saveFragment: (id: string, metadata: FragmentMetadata, content: string) => Promise<void>;
+  saveFragmentsBatch: (updates: { id: string; metadata: FragmentMetadata; content: string }[]) => Promise<void>;
   deleteFragment: (id: string) => Promise<void>;
   setActiveFragment: (id: string) => void;
   createTemporaryFragment: () => void;
@@ -46,6 +47,22 @@ export const useEditorStore = create<EditorState>((set, get) => ({
       await get().fetchFragments();
     } catch (error) {
       console.error('Failed to save fragment:', error);
+    } finally {
+      set({ isSaving: false });
+    }
+  },
+
+  saveFragmentsBatch: async (updates) => {
+    set({ isSaving: true });
+    try {
+      await fetch('/api/fragments/batch-update', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ updates }),
+      });
+      await get().fetchFragments();
+    } catch (error) {
+      console.error('Failed to batch save fragments:', error);
     } finally {
       set({ isSaving: false });
     }
