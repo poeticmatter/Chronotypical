@@ -4,6 +4,7 @@ import { Onboarding } from './routes/Onboarding';
 import { TravelerMode } from './routes/TravelerMode';
 import { PartnerMode } from './routes/PartnerMode';
 import { Editor } from './routes/Editor';
+import { BetaReader } from './routes/BetaReader';
 import { useStoryStore } from './store/useStoryStore';
 
 function Dispatcher() {
@@ -51,6 +52,7 @@ function App() {
           path="/editor"
           element={import.meta.env.DEV ? <Editor /> : <Navigate to="/" replace />}
         />
+        <Route path="/beta" element={<BetaReader />} />
       </Routes>
     </BrowserRouter>
   );

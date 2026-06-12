@@ -22,6 +22,7 @@ interface StoryState {
   markTravelerRead: (id: string) => void;
   updatePartnerProgress: (id: number) => void;
   resetProgress: () => void;
+  importBetaProgress: (seed: string, travelerProgress: string[], partnerProgress: number) => void;
 }
 
 const initialState = {
@@ -65,6 +66,16 @@ export const useStoryStore = create<StoryState>()(
         set({
           traveler: initialState.traveler,
           partner: initialState.partner,
+        }),
+      importBetaProgress: (seed, travelerProgress, partnerProgress) =>
+        set({
+          seed,
+          traveler: {
+            readFragments: travelerProgress,
+          },
+          partner: {
+            furthestReadChronologicalId: partnerProgress,
+          },
         }),
     }),
     {
