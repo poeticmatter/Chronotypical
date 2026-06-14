@@ -74,11 +74,12 @@ if (!isSupabaseConfigured) {
  * Fetch a beta reader profile by ID.
  */
 export async function getBetaReader(userId: string): Promise<BetaReaderProfile | null> {
+  const cleanId = userId.trim().toLowerCase();
   if (isSupabaseConfigured && supabase) {
     const { data, error } = await supabase
       .from('beta_readers')
       .select('*')
-      .eq('user_id', userId);
+      .eq('user_id', cleanId);
 
     if (error) {
       console.warn(`Supabase getBetaReader error:`, error.message);
@@ -91,7 +92,7 @@ export async function getBetaReader(userId: string): Promise<BetaReaderProfile |
   } else {
     // Local storage mock
     const readers = JSON.parse(localStorage.getItem(LOCAL_READERS_KEY) || '{}');
-    return readers[userId] || null;
+    return readers[cleanId] || null;
   }
 }
 
@@ -101,10 +102,16 @@ export async function getBetaReader(userId: string): Promise<BetaReaderProfile |
 export async function createOrUpdateBetaReader(
   profile: Partial<BetaReaderProfile> & { user_id: string }
 ): Promise<BetaReaderProfile | null> {
+  const cleanId = profile.user_id.trim().toLowerCase();
+  const normalizedProfile = {
+    ...profile,
+    user_id: cleanId,
+  };
+
   if (isSupabaseConfigured && supabase) {
     const { data, error } = await supabase
       .from('beta_readers')
-      .upsert(profile)
+      .upsert(normalizedProfile)
       .select()
       .single();
 
@@ -116,8 +123,8 @@ export async function createOrUpdateBetaReader(
   } else {
     // Local storage mock
     const readers = JSON.parse(localStorage.getItem(LOCAL_READERS_KEY) || '{}');
-    const existing = readers[profile.user_id] || {
-      user_id: profile.user_id,
+    const existing = readers[cleanId] || {
+      user_id: cleanId,
       name: null,
       contact_info: null,
       seed: Math.random().toString(36).substring(2, 8).toUpperCase(),
@@ -129,10 +136,10 @@ export async function createOrUpdateBetaReader(
 
     const updated: BetaReaderProfile = {
       ...existing,
-      ...profile,
+      ...normalizedProfile,
     };
 
-    readers[profile.user_id] = updated;
+    readers[cleanId] = updated;
     localStorage.setItem(LOCAL_READERS_KEY, JSON.stringify(readers));
     return updated;
   }
@@ -144,13 +151,18 @@ export async function createOrUpdateBetaReader(
 export async function logBetaReadingEvent(
   event: Omit<BetaReadingLog, 'created_at'>
 ): Promise<void> {
+  const cleanId = event.user_id.trim().toLowerCase();
+  const normalizedEvent = {
+    ...event,
+    user_id: cleanId,
+  };
   const timestampWithSeconds = new Date().toISOString();
   
   if (isSupabaseConfigured && supabase) {
     const { error } = await supabase
       .from('beta_reading_logs')
       .insert({
-        ...event,
+        ...normalizedEvent,
         created_at: timestampWithSeconds,
       });
 
@@ -162,7 +174,7 @@ export async function logBetaReadingEvent(
     const logs: BetaReadingLog[] = JSON.parse(localStorage.getItem(LOCAL_LOGS_KEY) || '[]');
     const newLog: BetaReadingLog = {
       id: Math.random().toString(36).substring(2, 10),
-      ...event,
+      ...normalizedEvent,
       created_at: timestampWithSeconds,
     };
     logs.push(newLog);

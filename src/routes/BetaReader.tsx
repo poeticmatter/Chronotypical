@@ -36,7 +36,8 @@ export function BetaReader() {
   const betaStore = useBetaStore();
   const storyStore = useStoryStore();
 
-  const userID = searchParams.get('userID');
+  const rawUserID = searchParams.get('userID');
+  const userID = rawUserID ? rawUserID.trim().toLowerCase() : null;
   const [onboardingName, setOnboardingName] = useState('');
   const [onboardingContact, setOnboardingContact] = useState('');
   const [profile, setProfile] = useState<BetaReaderProfile | null>(null);
