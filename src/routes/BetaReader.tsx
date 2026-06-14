@@ -40,6 +40,15 @@ export function BetaReader() {
   const [onboardingName, setOnboardingName] = useState('');
   const [onboardingContact, setOnboardingContact] = useState('');
   const [profile, setProfile] = useState<BetaReaderProfile | null>(null);
+  const [manualID, setManualID] = useState('');
+
+  const handleManualIDSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (manualID.trim()) {
+      betaStore.setError(null);
+      navigate(`/beta?userID=${manualID.trim()}`);
+    }
+  };
 
   // Initialize and validate
   useEffect(() => {
@@ -107,30 +116,7 @@ export function BetaReader() {
     }
   };
 
-  const handleSwitchMode = async (newMode: 'traveler' | 'partner') => {
-    if (!userID || !profile) return;
 
-    betaStore.setIsLoading(true);
-    try {
-      const updatedProfile = await createOrUpdateBetaReader({
-        ...profile,
-        reading_mode: newMode,
-      });
-
-      if (updatedProfile) {
-        setProfile(updatedProfile);
-        storyStore.importBetaProgress(
-          updatedProfile.seed,
-          updatedProfile.traveler_progress,
-          updatedProfile.partner_progress
-        );
-      }
-    } catch (err) {
-      console.error(err);
-    } finally {
-      betaStore.setIsLoading(false);
-    }
-  };
 
   // Rendering Loading
   if (betaStore.isLoading) {
@@ -148,19 +134,44 @@ export function BetaReader() {
   if (betaStore.error) {
     return (
       <Layout hideHeader>
-        <div className="max-w-md mx-auto bg-white border border-rose-100 rounded-2xl p-8 shadow-lg text-center font-sans">
+        <div className="max-w-md mx-auto bg-white border border-slate-100 p-8 rounded-3xl shadow-lg text-center font-sans">
           <div className="w-16 h-16 bg-rose-50 rounded-full flex items-center justify-center mx-auto mb-4 text-rose-500">
             <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
             </svg>
           </div>
           <h2 className="text-xl font-bold text-slate-800 mb-2">Access Denied</h2>
-          <p className="text-slate-600 text-sm mb-6 leading-relaxed">
+          <p className="text-slate-500 text-xs mb-6 leading-relaxed">
             {betaStore.error}
           </p>
-          <Button variant="secondary" onClick={() => navigate('/')} className="text-xs">
-            Return to Homepage
-          </Button>
+          
+          <form onSubmit={handleManualIDSubmit} className="space-y-3.5 pt-4 border-t border-slate-100">
+            <label className="block text-[11px] font-semibold text-slate-700 uppercase tracking-wider text-left">
+              Or Enter Tester ID Manually
+            </label>
+            <div className="flex gap-2">
+              <input
+                type="text"
+                placeholder="Tester ID"
+                value={manualID}
+                onChange={(e) => setManualID(e.target.value)}
+                className="flex-grow px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-slate-800 transition-all font-serif"
+              />
+              <Button type="submit" className="py-2 px-4 text-xs font-semibold rounded-xl bg-slate-900 hover:bg-slate-850 text-white shadow-md">
+                Sync ID
+              </Button>
+            </div>
+          </form>
+          
+          <div className="mt-6 pt-4 border-t border-slate-100">
+            <button
+              type="button"
+              onClick={() => navigate('/')}
+              className="text-xs text-slate-400 hover:text-slate-700 transition-colors font-medium cursor-pointer"
+            >
+              &larr; Return to Homepage
+            </button>
+          </div>
         </div>
       </Layout>
     );
@@ -262,27 +273,6 @@ export function BetaReader() {
           <p className="text-slate-500 font-serif italic mt-2 leading-relaxed">
             The calibration is stable. You have navigated all available memories.
           </p>
-          <div className="mt-8 p-6 bg-white border border-slate-100 rounded-2xl shadow-sm flex flex-col gap-3">
-            <span className="text-xs text-slate-400 font-semibold uppercase tracking-wider">
-              Change Reading Mode to Test Again
-            </span>
-            <div className="flex gap-2 justify-center">
-              <Button
-                variant={isTraveler ? 'primary' : 'secondary'}
-                onClick={() => handleSwitchMode('traveler')}
-                className="text-xs py-2 px-4"
-              >
-                Traveler Mode
-              </Button>
-              <Button
-                variant={!isTraveler ? 'primary' : 'secondary'}
-                onClick={() => handleSwitchMode('partner')}
-                className="text-xs py-2 px-4"
-              >
-                Partner Mode
-              </Button>
-            </div>
-          </div>
         </div>
       </Layout>
     );
@@ -303,24 +293,9 @@ export function BetaReader() {
         </div>
 
         <div className="flex items-center gap-2">
-          <div className="flex bg-slate-100 p-0.5 rounded-lg">
-            <button
-              onClick={() => handleSwitchMode('partner')}
-              className={`px-2.5 py-1 rounded-md text-[10px] font-sans font-medium transition-all cursor-pointer ${
-                !isTraveler ? 'bg-white text-slate-950 shadow-sm font-semibold' : 'text-slate-400 hover:text-slate-700'
-              }`}
-            >
-              Partner
-            </button>
-            <button
-              onClick={() => handleSwitchMode('traveler')}
-              className={`px-2.5 py-1 rounded-md text-[10px] font-sans font-medium transition-all cursor-pointer ${
-                isTraveler ? 'bg-white text-slate-950 shadow-sm font-semibold' : 'text-slate-400 hover:text-slate-700'
-              }`}
-            >
-              Traveler
-            </button>
-          </div>
+          <span className="font-sans text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-100 px-2.5 py-1 rounded-md">
+            Mode: {isTraveler ? 'Traveler' : 'Partner'}
+          </span>
         </div>
       </header>
 
@@ -352,6 +327,9 @@ export function BetaReader() {
   );
 }
 
+// Deduplicate double logging in React StrictMode dev environment
+let lastLoggedView = '';
+
 // Sub-component to manage MDX loading, warnings, and feedback panels
 function BetaFragmentRenderer({
   userID,
@@ -374,7 +352,6 @@ function BetaFragmentRenderer({
 }) {
   const [MDXComponent, setMDXComponent] = useState<React.LazyExoticComponent<React.ComponentType<any>> | null>(null);
   const [isRevealed, setIsRevealed] = useState(!meta.warnings || meta.warnings.length === 0);
-  const [viewLogged, setViewLogged] = useState(false);
 
   // Load component
   useEffect(() => {
@@ -382,15 +359,14 @@ function BetaFragmentRenderer({
       const cmp = lazy(() => import(`../content/${fragmentId}.mdx`));
       setMDXComponent(() => cmp);
       setIsRevealed(!meta.warnings || meta.warnings.length === 0);
-      setViewLogged(false);
       betaStore.resetFeedback();
     }
   }, [fragmentId]);
 
-  // Log View event only when revealed to user
+  // Log View event only when revealed to user (deduplicated against React StrictMode)
   useEffect(() => {
-    if (isRevealed && !viewLogged) {
-      setViewLogged(true);
+    if (isRevealed && lastLoggedView !== fragmentId) {
+      lastLoggedView = fragmentId;
       logBetaReadingEvent({
         user_id: userID,
         fragment_id: fragmentId,
@@ -399,7 +375,7 @@ function BetaFragmentRenderer({
         comments: null,
       });
     }
-  }, [isRevealed, viewLogged, fragmentId, userID]);
+  }, [isRevealed, fragmentId, userID]);
 
   const handleAdvance = async () => {
     const reaction = betaStore.feedbackEmoji;
