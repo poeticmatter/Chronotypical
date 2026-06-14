@@ -135,7 +135,7 @@ export function BetaReader() {
   // Rendering Loading
   if (betaStore.isLoading) {
     return (
-      <Layout>
+      <Layout hideHeader>
         <div className="flex flex-col items-center justify-center py-20">
           <div className="w-12 h-12 border-4 border-slate-200 border-t-slate-800 rounded-full animate-spin mb-4" />
           <p className="text-slate-500 font-sans text-sm animate-pulse">Initializing temporal sync...</p>
@@ -147,7 +147,7 @@ export function BetaReader() {
   // Rendering Error
   if (betaStore.error) {
     return (
-      <Layout>
+      <Layout hideHeader>
         <div className="max-w-md mx-auto bg-white border border-rose-100 rounded-2xl p-8 shadow-lg text-center font-sans">
           <div className="w-16 h-16 bg-rose-50 rounded-full flex items-center justify-center mx-auto mb-4 text-rose-500">
             <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -169,7 +169,7 @@ export function BetaReader() {
   // Onboarding (First Join)
   if (profile && !betaStore.isRegistered) {
     return (
-      <Layout>
+      <Layout hideHeader>
         <div className="max-w-md mx-auto bg-white border border-slate-100 rounded-2xl p-8 shadow-sm font-sans">
           <div className="text-center mb-6">
             <span className="inline-block text-xs font-bold bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full uppercase tracking-wider mb-2">
@@ -250,7 +250,7 @@ export function BetaReader() {
   // Ending screen
   if (!currentFragId || !meta) {
     return (
-      <Layout>
+      <Layout hideHeader>
         {!isSupabaseConfigured && (
           <div className="w-full mb-6 p-3 bg-amber-50 border border-amber-200 rounded-xl text-xs font-sans text-amber-800 flex justify-between items-center">
             <span>⚠️ <strong>Demo Mode:</strong> Supabase not configured. Logs are saved to Local Storage.</span>

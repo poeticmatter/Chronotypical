@@ -4,9 +4,10 @@ import { useStoryStore } from '../store/useStoryStore';
 
 interface LayoutProps {
   children: React.ReactNode;
+  hideHeader?: boolean;
 }
 
-export function Layout({ children }: LayoutProps) {
+export function Layout({ children, hideHeader = false }: LayoutProps) {
   const location = useLocation();
   const navigate = useNavigate();
   const store = useStoryStore();
@@ -33,7 +34,7 @@ export function Layout({ children }: LayoutProps) {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-serif flex flex-col items-center pb-12">
-      {isCalibrated && (
+      {isCalibrated && !hideHeader && (
         <header className="w-full max-w-2xl px-4 py-3 mt-4 bg-white/80 backdrop-blur-md border border-slate-100 rounded-2xl shadow-sm flex flex-col sm:flex-row gap-3 justify-between items-center sticky top-4 z-40">
           <div className="flex items-center gap-2">
             <span className="font-sans font-extrabold tracking-wider text-slate-800 text-sm uppercase">
