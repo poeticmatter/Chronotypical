@@ -42,12 +42,19 @@ export function BetaReader() {
   const [onboardingContact, setOnboardingContact] = useState('');
   const [profile, setProfile] = useState<BetaReaderProfile | null>(null);
   const [manualID, setManualID] = useState('');
+  const [retryTrigger, setRetryTrigger] = useState(0);
 
   const handleManualIDSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (manualID.trim()) {
+    const cleanManualID = manualID.trim().toLowerCase();
+    if (cleanManualID) {
       betaStore.setError(null);
-      navigate(`/beta?userID=${manualID.trim()}`);
+      if (cleanManualID === userID) {
+        // Force re-run validation if trying to sync the same ID again
+        setRetryTrigger((prev) => prev + 1);
+      } else {
+        navigate(`/beta?userID=${cleanManualID}`);
+      }
     }
   };
 
@@ -87,7 +94,7 @@ export function BetaReader() {
       .finally(() => {
         betaStore.setIsLoading(false);
       });
-  }, [userID]);
+  }, [userID, retryTrigger]);
 
   const handleOnboardingSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
