@@ -3,6 +3,7 @@ import { useEditorStore } from '../store/useEditorStore';
 import type { EditorFragment } from '../store/useEditorStore';
 import { AnimatePresence, motion, Reorder } from 'framer-motion';
 import { FeedbackDashboard } from '../components/FeedbackDashboard';
+import { getAllBetaReaders, getAllBetaReadingLogs, type BetaReaderProfile, type BetaReadingLog } from '../lib/supabase';
 
 export function Editor() {
   const store = useEditorStore();
@@ -892,11 +893,219 @@ function EditorForm({
           )}
         </AnimatePresence>
       </div>
+
+      {/* Feedback logs for the current fragment */}
+      <FormFeedbackSection fragmentId={fragment.id} />
     </div>
   );
 }
 
-function StageReorderer({ store, setEditorMode }: { store: any; setEditorMode: (mode: 'write' | 'reorder') => void }) {
+function FormFeedbackSection({ fragmentId }: { fragmentId: string }) {
+  const [readers, setReaders] = useState<BetaReaderProfile[]>([]);
+  const [logs, setLogs] = useState<BetaReadingLog[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let active = true;
+    async function loadData() {
+      setLoading(true);
+      try {
+        const [loadedReaders, loadedLogs] = await Promise.all([
+          getAllBetaReaders(),
+          getAllBetaReadingLogs()
+        ]);
+        if (active) {
+          setReaders(loadedReaders);
+          setLogs(loadedLogs);
+        }
+      } catch (err) {
+        console.error("Failed to load feedback logs in write form:", err);
+      } finally {
+        if (active) {
+          setLoading(false);
+        }
+      }
+    }
+    loadData();
+    return () => {
+      active = false;
+    };
+  }, [fragmentId]);
+
+  if (loading) {
+    return (
+      <div className="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-6 text-center text-slate-500 italic text-xs animate-pulse">
+        Syncing tester feedback...
+      </div>
+    );
+  }
+
+  // Filter logs for this specific fragment
+  const fragLogs = logs.filter(l => l.fragment_id === fragmentId);
+  const views = fragLogs.filter(l => l.action === 'view').length;
+  const advances = fragLogs.filter(l => l.action === 'advance').length;
+  const commentsList = fragLogs.filter(l => l.action === 'advance' && l.comments && l.comments.trim().length > 0);
+
+  // Calculate average reading time for this fragment
+  const timingSamples: number[] = [];
+  const userLogs: Record<string, BetaReadingLog[]> = {};
+  
+  // Group logs of this fragment by user
+  fragLogs.forEach(log => {
+    if (!userLogs[log.user_id]) {
+      userLogs[log.user_id] = [];
+    }
+    userLogs[log.user_id].push(log);
+  });
+
+  Object.entries(userLogs).forEach(([_userId, eventList]) => {
+    eventList.sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime());
+    
+    let lastViewTime: number | null = null;
+    eventList.forEach(evt => {
+      if (evt.action === 'view') {
+        lastViewTime = new Date(evt.created_at).getTime();
+      } else if (evt.action === 'advance' && lastViewTime !== null) {
+        const durationSec = (new Date(evt.created_at).getTime() - lastViewTime) / 1000;
+        if (durationSec > 0.5 && durationSec < 1800) {
+          timingSamples.push(durationSec);
+        }
+        lastViewTime = null;
+      }
+    });
+  });
+
+  const avgTime = timingSamples.length > 0 
+    ? timingSamples.reduce((a, b) => a + b, 0) / timingSamples.length 
+    : null;
+
+  // Reaction breakdown
+  const reactions: Record<string, number> = { funny: 0, interesting: 0, confusing: 0, boring: 0, skipped: 0 };
+  fragLogs.forEach(l => {
+    if (l.action === 'advance' && l.reaction) {
+      const rx = l.reaction.toLowerCase();
+      if (rx in reactions) {
+        reactions[rx]++;
+      }
+    }
+  });
+
+  const reactionEmojis: Record<string, string> = {
+    funny: '😂',
+    interesting: '🤔',
+    confusing: '😵‍💫',
+    boring: '🥱',
+    skipped: '⚠️'
+  };
+
+  const reactionColorClasses: Record<string, string> = {
+    funny: 'bg-amber-500/10 text-amber-400 border border-amber-500/20',
+    interesting: 'bg-indigo-500/10 text-indigo-400 border border-indigo-500/20',
+    confusing: 'bg-purple-500/10 text-purple-400 border border-purple-500/20',
+    boring: 'bg-rose-500/10 text-rose-400 border border-rose-500/20',
+    skipped: 'bg-slate-500/10 text-slate-400 border border-slate-500/20'
+  };
+
+  const formatSec = (sec: number | null) => {
+    if (sec === null) return '--';
+    if (sec < 60) return `${sec.toFixed(1)}s`;
+    const mins = Math.floor(sec / 60);
+    const secs = Math.round(sec % 60);
+    return `${mins}m ${secs}s`;
+  };
+
+  return (
+    <div className="bg-slate-900/60 border border-slate-800 shadow-2xl rounded-2xl p-6 md:p-8 space-y-6">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-slate-850 pb-4 gap-2">
+        <h3 className="text-sm font-bold text-slate-200 uppercase tracking-wider flex items-center gap-2">
+          <span>Beta Tester Feedback</span>
+          <span className="text-xs text-slate-550 lowercase font-serif font-normal">({fragLogs.length} events logged)</span>
+        </h3>
+        
+        <div className="flex items-center gap-4 text-xs">
+          <div className="text-left sm:text-right">
+            <span className="text-[9px] uppercase font-extrabold text-slate-550 tracking-wider block">Avg Duration</span>
+            <span className={`font-mono font-bold ${avgTime ? 'text-indigo-400' : 'text-slate-650'}`}>
+              {formatSec(avgTime)}
+            </span>
+          </div>
+          <div className="text-left sm:text-right">
+            <span className="text-[9px] uppercase font-extrabold text-slate-555 tracking-wider block">Views / Advances</span>
+            <span className="font-mono text-slate-350 font-bold">
+              {views} / {advances}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {advances > 0 && (
+        <div className="space-y-2 text-left">
+          <span className="text-[10px] text-slate-500 uppercase font-extrabold tracking-wider">Reactions breakdown</span>
+          <div className="flex gap-1.5 flex-wrap">
+            {Object.entries(reactions).map(([rx, count]) => {
+              if (count === 0) return null;
+              return (
+                <span 
+                  key={rx} 
+                  className={`text-[10px] font-bold px-2.5 py-1 rounded-lg uppercase tracking-wider flex items-center gap-1.5 ${reactionColorClasses[rx] || ''}`}
+                >
+                  <span>{reactionEmojis[rx]}</span>
+                  <span className="capitalize">{rx}:</span>
+                  <span className="font-mono font-bold text-slate-100">{count}</span>
+                </span>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      <div className="space-y-3 text-left">
+        <span className="text-[10px] text-slate-500 uppercase font-extrabold tracking-wider block">Reader Comments ({commentsList.length})</span>
+        <div className="space-y-2.5 max-h-80 overflow-y-auto pr-1">
+          {commentsList.map((comment, cIdx) => {
+            const profile = readers.find(r => r.user_id === comment.user_id);
+            const displayName = profile?.name || comment.user_id;
+            const dateString = new Date(comment.created_at).toLocaleString();
+
+            return (
+              <div key={cIdx} className="bg-slate-950/40 border border-slate-850 rounded-xl p-4 space-y-2">
+                <div className="flex justify-between items-start flex-wrap gap-2 text-xs">
+                  <div className="flex items-center gap-2">
+                    <span className="font-bold text-slate-300">{displayName}</span>
+                    {profile?.reading_mode && (
+                      <span className="text-[9px] uppercase font-bold px-1.5 py-0.5 rounded bg-slate-850 text-slate-500 border border-slate-800">
+                        {profile.reading_mode}
+                      </span>
+                    )}
+                  </div>
+                  <span className="text-[10px] text-slate-550 font-mono">{dateString}</span>
+                </div>
+
+                <p className="text-xs text-slate-400 font-serif leading-relaxed italic">
+                  "{comment.comments}"
+                </p>
+
+                {comment.reaction && (
+                  <div className="pt-1 flex">
+                    <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider ${reactionColorClasses[comment.reaction.toLowerCase()] || ''}`}>
+                      {reactionEmojis[comment.reaction.toLowerCase()]} {comment.reaction}
+                    </span>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+          
+          {commentsList.length === 0 && (
+            <p className="text-xs italic text-slate-600 py-3 text-center bg-slate-950/20 border border-dashed border-slate-850 rounded-xl">No comments left on this fragment yet.</p>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function StageReorderer({ store, setEditorMode }: { store: any; setEditorMode: (mode: 'write' | 'reorder' | 'feedback') => void }) {
   const STAGES = ['before', 'courting', 'partnered', 'married', 'pregnancy', 'parenting-young', 'parenting-teen', 'later'];
   
   const [selectedStage, setSelectedStage] = useState<string>('before');
