@@ -181,3 +181,47 @@ export async function logBetaReadingEvent(
     localStorage.setItem(LOCAL_LOGS_KEY, JSON.stringify(logs));
   }
 }
+
+/**
+ * Fetch all beta readers.
+ */
+export async function getAllBetaReaders(): Promise<BetaReaderProfile[]> {
+  if (isSupabaseConfigured && supabase) {
+    const { data, error } = await supabase
+      .from('beta_readers')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (error) {
+      console.error(`Supabase getAllBetaReaders error:`, error.message);
+      return [];
+    }
+    return (data || []) as BetaReaderProfile[];
+  } else {
+    // Local storage mock
+    const readersMap = JSON.parse(localStorage.getItem(LOCAL_READERS_KEY) || '{}');
+    return Object.values(readersMap);
+  }
+}
+
+/**
+ * Fetch all beta reading logs.
+ */
+export async function getAllBetaReadingLogs(): Promise<BetaReadingLog[]> {
+  if (isSupabaseConfigured && supabase) {
+    const { data, error } = await supabase
+      .from('beta_reading_logs')
+      .select('*')
+      .order('created_at', { ascending: true });
+
+    if (error) {
+      console.error(`Supabase getAllBetaReadingLogs error:`, error.message);
+      return [];
+    }
+    return (data || []) as BetaReadingLog[];
+  } else {
+    // Local storage mock
+    return JSON.parse(localStorage.getItem(LOCAL_LOGS_KEY) || '[]');
+  }
+}
+

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useEditorStore } from '../store/useEditorStore';
 import type { EditorFragment } from '../store/useEditorStore';
 import { AnimatePresence, motion, Reorder } from 'framer-motion';
+import { FeedbackDashboard } from '../components/FeedbackDashboard';
 
 export function Editor() {
   const store = useEditorStore();
@@ -37,7 +38,7 @@ export function Editor() {
   const [resetProgress, setResetProgress] = useState(0);
 
   // Editor Mode State
-  const [editorMode, setEditorMode] = useState<'write' | 'reorder'>('write');
+  const [editorMode, setEditorMode] = useState<'write' | 'reorder' | 'feedback'>('write');
 
   // Reset all reviewed flags to false in batches
   const handleStartOver = async () => {
@@ -148,6 +149,16 @@ export function Editor() {
             >
               Reorder
             </button>
+            <button
+              onClick={() => setEditorMode('feedback')}
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-bold tracking-wider uppercase transition-all cursor-pointer ${
+                editorMode === 'feedback'
+                  ? 'bg-indigo-600 text-white shadow-md'
+                  : 'text-slate-400 hover:text-slate-200'
+              }`}
+            >
+              Feedback
+            </button>
           </div>
           
           {editorMode === 'write' && (
@@ -191,6 +202,8 @@ export function Editor() {
       <main className="flex-1 w-full max-w-5xl mx-auto px-6 py-8">
         {editorMode === 'reorder' ? (
           <StageReorderer store={store} setEditorMode={setEditorMode} />
+        ) : editorMode === 'feedback' ? (
+          <FeedbackDashboard />
         ) : activeFragment ? (
           <EditorForm
             key={activeFragment.id} // Re-mounts form on active index change
