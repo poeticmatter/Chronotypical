@@ -245,6 +245,7 @@ export function BetaReader() {
   const isTraveler = profile.reading_mode === 'traveler';
   let currentFragId: string | null = null;
   let meta: FragmentMetadata | null = null;
+  let currentIndex = 0;
 
   if (isTraveler) {
     currentFragId = getNextDeterministicFragment(
@@ -253,15 +254,17 @@ export function BetaReader() {
       profile.seed
     );
     meta = currentFragId ? (manifest.find((m) => m.id === currentFragId) as FragmentMetadata) : null;
+    currentIndex = storyStore.traveler.readFragments.length;
   } else {
     // Partner Mode (linear)
-    const currentIndex = Math.max(
+    const partnerIdx = Math.max(
       0,
       partnerManifest.findIndex((m) => m.chronological_order === storyStore.partner.furthestReadChronologicalId) + 1
     );
+    currentIndex = partnerIdx;
 
-    if (currentIndex < partnerManifest.length) {
-      meta = partnerManifest[currentIndex];
+    if (partnerIdx < partnerManifest.length) {
+      meta = partnerManifest[partnerIdx];
       currentFragId = meta.id;
     }
   }
@@ -303,6 +306,9 @@ export function BetaReader() {
         <div className="flex items-center gap-2">
           <span className="font-sans text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-slate-100 px-2.5 py-1 rounded-md">
             Mode: {isTraveler ? 'Traveler' : 'Partner'}
+          </span>
+          <span className="font-sans text-[10px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-2.5 py-1 rounded-md">
+            {currentIndex + 1} of {manifest.length}
           </span>
         </div>
       </header>
