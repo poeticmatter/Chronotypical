@@ -25,15 +25,7 @@ export function getNextDeterministicFragment(
     (frag) => readFragments.length >= frag.required_pool_count
   );
 
-  // Filter 3: Tag Prerequisites - All required tags must have been unlocked by previously read fragments
-  const readFragmentsSet = new Set(readFragments);
-  const unlockedTags = new Set(
-    manifest.filter((f) => readFragmentsSet.has(f.id)).flatMap((f) => f.tags || [])
-  );
-
-  const eligiblePool = thresholdPool.filter((frag) => {
-    return (frag.requires || []).every((reqTag) => unlockedTags.has(reqTag));
-  });
+  const eligiblePool = thresholdPool;
 
   // Handle Deadlocks
   if (eligiblePool.length === 0) {
