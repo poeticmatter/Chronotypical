@@ -44,13 +44,70 @@ function localEditorPlugin(): Plugin {
                 content: content.trim()
               };
             });
-            res.setHeader('Content-Type', 'application/json');
+          res.setHeader('Content-Type', 'application/json');
             res.end(JSON.stringify(fragments));
           } catch (e) {
             console.error(e);
             res.statusCode = 500;
             res.end(JSON.stringify({ error: 'Failed to read fragments' }));
           }
+          return;
+        }
+
+        // GET /api/fragments/:id/history
+        // GET /api/fragments/:id/history/:hash
+        if (req.method === 'GET' && req.url.startsWith('/api/fragments/') && req.url.includes('/history')) {
+          const parts = req.url.split('?')[0].split('/');
+          const id = decodeURIComponent(parts[3] || '');
+          const hash = parts[5] ? decodeURIComponent(parts[5]) : undefined;
+
+          if (!id) {
+            res.statusCode = 400;
+            return res.end(JSON.stringify({ error: 'Missing ID' }));
+          }
+
+          const filePath = path.join(contentDir, `${id}.mdx`);
+          if (!fs.existsSync(filePath)) {
+            console.warn(`[local-editor] Fragment file not found: ${filePath} (id: ${id})`);
+            res.statusCode = 404;
+            return res.end(JSON.stringify({ error: `Fragment file not found: ${id}` }));
+          }
+
+          import('child_process').then(cp => {
+            const relativePath = path.relative(process.cwd(), filePath).replace(/\\/g, '/');
+
+            if (hash) {
+              cp.exec(`git show ${hash}:"${relativePath}"`, (err, stdout) => {
+                if (err) {
+                  console.error(err);
+                  res.statusCode = 500;
+                  return res.end(JSON.stringify({ error: `Failed to show file content at ${hash}` }));
+                }
+                try {
+                  const { content } = matter(stdout);
+                  res.setHeader('Content-Type', 'application/json');
+                  res.end(JSON.stringify({ hash, content: content.trim() }));
+                } catch (e) {
+                  console.error(e);
+                  res.statusCode = 500;
+                  res.end(JSON.stringify({ error: 'Failed to parse file content' }));
+                }
+              });
+            } else {
+              cp.exec(`git log --follow --format="%H|%an|%ad|%s" -- "${relativePath}"`, (err, stdout) => {
+                if (err) {
+                  res.setHeader('Content-Type', 'application/json');
+                  return res.end(JSON.stringify([]));
+                }
+                const commits = stdout.trim().split('\n').filter(Boolean).map(line => {
+                  const [commitHash, author, date, subject] = line.split('|');
+                  return { hash: commitHash, author, date, subject };
+                });
+                res.setHeader('Content-Type', 'application/json');
+                res.end(JSON.stringify(commits));
+              });
+            }
+          });
           return;
         }
 

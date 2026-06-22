@@ -894,8 +894,294 @@ function EditorForm({
         </AnimatePresence>
       </div>
 
+      {/* Git History for the current fragment */}
+      {fragment.id !== 'NEW' && (
+        <FormHistorySection
+          fragmentId={fragment.id}
+          currentContent={content}
+          onRestore={(restoredText) => setContent(restoredText)}
+        />
+      )}
+
       {/* Feedback logs for the current fragment */}
       <FormFeedbackSection fragmentId={fragment.id} />
+    </div>
+  );
+}
+
+interface DiffLine {
+  type: 'added' | 'removed' | 'unchanged';
+  value: string;
+}
+
+function computeLineDiff(oldText: string, newText: string): DiffLine[] {
+  const oldLines = oldText.split('\n');
+  const newLines = newText.split('\n');
+
+  const dp: number[][] = Array(oldLines.length + 1)
+    .fill(null)
+    .map(() => Array(newLines.length + 1).fill(0));
+
+  for (let i = 1; i <= oldLines.length; i++) {
+    for (let j = 1; j <= newLines.length; j++) {
+      if (oldLines[i - 1] === newLines[j - 1]) {
+        dp[i][j] = dp[i - 1][j - 1] + 1;
+      } else {
+        dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+      }
+    }
+  }
+
+  const diff: DiffLine[] = [];
+  let i = oldLines.length;
+  let j = newLines.length;
+  while (i > 0 || j > 0) {
+    if (i > 0 && j > 0 && oldLines[i - 1] === newLines[j - 1]) {
+      diff.push({ type: 'unchanged', value: oldLines[i - 1] });
+      i--;
+      j--;
+    } else if (j > 0 && (i === 0 || dp[i][j - 1] >= dp[i - 1][j])) {
+      diff.push({ type: 'added', value: newLines[j - 1] });
+      j--;
+    } else {
+      diff.push({ type: 'removed', value: oldLines[i - 1] });
+      i--;
+    }
+  }
+  return diff.reverse();
+}
+
+function FormHistorySection({
+  fragmentId,
+  currentContent,
+  onRestore
+}: {
+  fragmentId: string;
+  currentContent: string;
+  onRestore: (text: string) => void;
+}) {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [commits, setCommits] = useState<any[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [selectedHash, setSelectedHash] = useState<string | null>(null);
+  const [selectedContent, setSelectedContent] = useState<string | null>(null);
+  const [loadingContent, setLoadingContent] = useState(false);
+
+  const fetchHistory = async () => {
+    if (!fragmentId || fragmentId === 'NEW') return;
+    setLoading(true);
+    try {
+      const res = await fetch(`/api/fragments/${encodeURIComponent(fragmentId)}/history`);
+      if (!res.ok) {
+        setCommits([]);
+        return;
+      }
+      const data = await res.json();
+      setCommits(Array.isArray(data) ? data : []);
+    } catch (e) {
+      console.error('Failed to fetch fragment history:', e);
+      setCommits([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isExpanded) {
+      fetchHistory();
+      setSelectedHash(null);
+      setSelectedContent(null);
+    }
+  }, [fragmentId, isExpanded]);
+
+  const handleSelectCommit = async (hash: string) => {
+    setSelectedHash(hash);
+    setLoadingContent(true);
+    try {
+      const res = await fetch(`/api/fragments/${encodeURIComponent(fragmentId)}/history/${encodeURIComponent(hash)}`);
+      if (!res.ok) {
+        setSelectedContent(null);
+        return;
+      }
+      const data = await res.json();
+      setSelectedContent(data && typeof data === 'object' && 'content' in data ? data.content : null);
+    } catch (e) {
+      console.error('Failed to fetch historical content:', e);
+      setSelectedContent(null);
+    } finally {
+      setLoadingContent(false);
+    }
+  };
+
+  const diffLines = selectedContent !== null ? computeLineDiff(selectedContent, currentContent) : [];
+
+  return (
+    <div className="bg-slate-900/60 border border-slate-800 shadow-2xl rounded-2xl overflow-hidden transition-all duration-300">
+      <button
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-slate-800/30 transition-colors cursor-pointer select-none"
+      >
+        <div className="flex items-center gap-2.5">
+          <svg
+            className={`w-4 h-4 text-violet-400 transition-transform duration-300 ${isExpanded ? 'rotate-90' : ''}`}
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2.5}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+          </svg>
+          <span className="font-bold text-sm tracking-wide text-slate-200">Git Revision History</span>
+          {fragmentId !== 'NEW' && !loading && commits.length > 0 && (
+            <span className="px-2 py-0.5 bg-violet-500/10 border border-violet-500/25 rounded-md text-[10px] text-violet-400 font-semibold">
+              {commits.length} revision{commits.length !== 1 ? 's' : ''}
+            </span>
+          )}
+        </div>
+        <span className="text-xs text-slate-500 uppercase font-semibold">
+          {isExpanded ? 'Hide' : 'Show'}
+        </span>
+      </button>
+
+      <AnimatePresence initial={false}>
+        {isExpanded && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: 'easeInOut' }}
+          >
+            <div className="px-6 pb-6 pt-2 border-t border-slate-850 space-y-6">
+              {loading ? (
+                <div className="py-8 text-center text-slate-500 italic text-xs animate-pulse">
+                  Querying local git repository...
+                </div>
+              ) : commits.length === 0 ? (
+                <div className="py-8 text-center text-slate-500 italic text-xs bg-slate-950/20 border border-dashed border-slate-850 rounded-xl">
+                  No git revisions found for this fragment yet (it may be uncommitted or untracked).
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                  {/* Commits Timeline column */}
+                  <div className="lg:col-span-5 space-y-3 max-h-[400px] overflow-y-auto pr-1">
+                    <span className="text-[10px] text-slate-500 uppercase font-extrabold tracking-wider block text-left">
+                      Select Revision to Compare
+                    </span>
+                    <div className="relative border-l border-slate-800 pl-4 ml-2 space-y-4 text-left">
+                      {commits.map((c) => {
+                        const isSelected = selectedHash === c.hash;
+                        const shortHash = c.hash.substring(0, 7);
+                        return (
+                          <div key={c.hash} className="relative group/item">
+                            {/* Marker dot */}
+                            <div
+                              className={`absolute -left-[21px] top-1.5 w-3.5 h-3.5 rounded-full border-2 transition-all ${
+                                isSelected
+                                  ? 'bg-violet-500 border-violet-400 scale-110 shadow-lg shadow-violet-500/50'
+                                  : 'bg-slate-900 border-slate-700 group-hover/item:border-slate-500'
+                              }`}
+                            />
+                            <button
+                              onClick={() => handleSelectCommit(c.hash)}
+                              className={`w-full text-left p-3.5 rounded-xl border transition-all cursor-pointer flex flex-col gap-1.5 ${
+                                isSelected
+                                  ? 'bg-violet-950/20 border-violet-500/40 text-violet-100 shadow-lg shadow-violet-950/5'
+                                  : 'bg-slate-950/30 border-slate-850 text-slate-400 hover:bg-slate-850/20 hover:border-slate-700 hover:text-slate-350'
+                              }`}
+                            >
+                              <div className="flex justify-between items-center w-full gap-2">
+                                <span className="font-mono text-[10px] font-bold text-violet-400">
+                                  {shortHash}
+                                </span>
+                                <span className="text-[9px] text-slate-500 font-mono">
+                                  {new Date(c.date).toLocaleDateString(undefined, {
+                                    month: 'short',
+                                    day: 'numeric',
+                                    year: 'numeric'
+                                  })}
+                                </span>
+                              </div>
+                              <p className="text-xs font-semibold leading-snug break-words">
+                                {c.subject}
+                              </p>
+                              <span className="text-[10px] text-slate-550">
+                                by {c.author}
+                              </span>
+                            </button>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Content Diff column */}
+                  <div className="lg:col-span-7 space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-[10px] text-slate-500 uppercase font-extrabold tracking-wider">
+                        {selectedHash ? 'Text Diff (Historical vs Draft)' : 'Comparison View'}
+                      </span>
+                      {selectedHash && selectedContent !== null && !loadingContent && (
+                        <button
+                          onClick={() => {
+                            if (confirm('Are you sure you want to restore the narrative text of this revision? Your current unsaved edits to the text will be overwritten.')) {
+                              onRestore(selectedContent);
+                            }
+                          }}
+                          className="bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-bold text-[10px] tracking-wider uppercase px-3 py-1.5 rounded-lg shadow-md hover:shadow-lg transition-all flex items-center gap-1.5 cursor-pointer"
+                        >
+                          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
+                          </svg>
+                          Restore Text
+                        </button>
+                      )}
+                    </div>
+
+                    <div className="bg-slate-950/90 border border-slate-800 rounded-2xl min-h-[250px] max-h-[400px] overflow-y-auto font-mono text-xs p-4 shadow-inner relative flex flex-col text-left">
+                      {loadingContent && (
+                        <div className="absolute inset-0 flex items-center justify-center bg-slate-950/70 backdrop-blur-sm z-10 text-slate-500 italic text-[11px] animate-pulse">
+                          Fetching revision details...
+                        </div>
+                      )}
+
+                      {!selectedHash ? (
+                        <div className="flex-1 flex flex-col items-center justify-center text-slate-600 p-8 text-center">
+                          <svg className="w-8 h-8 text-slate-800 mb-2 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.03 0 1.9.693 2.166 1.638m-7.377 2.24a.75.75 0 0 1 1.05-.143C12 6 12.25 6 12.5 6c.068 0 .135-.001.2-.003a.75.75 0 1 1 .099 1.496l-.007.001c-.13.004-.26.006-.392.006-.43 0-.843-.1-1.21-.28a.75.75 0 0 1-.144-1.049Z" />
+                          </svg>
+                          <p className="text-[11px] italic">Select a commit from the timeline to see changes.</p>
+                        </div>
+                      ) : (
+                        <div className="space-y-0.5">
+                          {diffLines.map((line, lIdx) => {
+                            let lineClass = 'text-slate-400';
+                            let prefix = ' ';
+                            if (line.type === 'added') {
+                              lineClass = 'text-emerald-400 bg-emerald-950/20 border-l-2 border-emerald-500 pl-1.5';
+                              prefix = '+';
+                            } else if (line.type === 'removed') {
+                              lineClass = 'text-rose-400 bg-rose-950/20 border-l-2 border-rose-500 pl-1.5';
+                              prefix = '-';
+                            } else {
+                              lineClass = 'text-slate-400 pl-2';
+                            }
+                            return (
+                              <div key={lIdx} className={`py-0.5 whitespace-pre-wrap select-text leading-relaxed ${lineClass}`}>
+                                <span className="text-[10px] text-slate-650 inline-block w-4 select-none mr-1.5 font-bold">{prefix}</span>
+                                {line.value || ' '}
+                              </div>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
