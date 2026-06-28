@@ -393,7 +393,7 @@ function EditorForm({
     setMetadata(prev => ({ ...prev, tags: arr }));
   };
 
-  const STAGES = ['before', 'courting', 'partnered', 'married', 'pregnancy', 'parenting-young', 'parenting-teen', 'later'];
+  const STAGES = ['before', 'courting', 'partnered', 'married', 'pregnancy', 'one-kid', 'poly', 'two-kids', 'parenting-teen', 'later'];
 
   const stageOptions = [
     { value: '', label: 'Select Stage (None)' },
@@ -1392,7 +1392,7 @@ function FormFeedbackSection({ fragmentId }: { fragmentId: string }) {
 }
 
 function StageReorderer({ store, setEditorMode }: { store: any; setEditorMode: (mode: 'write' | 'reorder' | 'feedback') => void }) {
-  const STAGES = ['before', 'courting', 'partnered', 'married', 'pregnancy', 'parenting-young', 'parenting-teen', 'later'];
+  const STAGES = ['before', 'courting', 'partnered', 'married', 'pregnancy', 'one-kid', 'poly', 'two-kids', 'parenting-teen', 'later'];
   
   const [selectedStage, setSelectedStage] = useState<string>('before');
   const [orderedList, setOrderedList] = useState<EditorFragment[]>([]);
