@@ -113,33 +113,9 @@
     "reviewed": true
   },
   {
-    "id": "frag-026",
-    "title": "Chess and Future Sight",
-    "chronological_order": 11,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [
-      "explain-futuresight"
-    ],
-    "warnings": [],
-    "stage": "courting",
-    "reviewed": true
-  },
-  {
-    "id": "frag-030",
-    "title": "Teaching Time Travel",
-    "chronological_order": 12,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [],
-    "warnings": [],
-    "stage": "courting",
-    "reviewed": true
-  },
-  {
     "id": "frag-031",
     "title": "Two Kids",
-    "chronological_order": 13,
+    "chronological_order": 11,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -150,26 +126,13 @@
     "reviewed": true
   },
   {
-    "id": "frag-037",
-    "title": "Telling Myself Later",
-    "chronological_order": 14,
+    "id": "frag-026",
+    "title": "Chess and Future Sight",
+    "chronological_order": 12,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
-      "trans"
-    ],
-    "warnings": [],
-    "stage": "courting",
-    "reviewed": true
-  },
-  {
-    "id": "frag-057",
-    "title": "Like the Day I Was Born",
-    "chronological_order": 15,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [
-      "love"
+      "explain-futuresight"
     ],
     "warnings": [],
     "stage": "courting",
@@ -178,7 +141,7 @@
   {
     "id": "frag-003",
     "title": "Ice Cream Flavors",
-    "chronological_order": 16,
+    "chronological_order": 13,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -189,6 +152,39 @@
   {
     "id": "frag-105",
     "title": "I Can Always Verify",
+    "chronological_order": 14,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [],
+    "warnings": [],
+    "stage": "courting",
+    "reviewed": true
+  },
+  {
+    "id": "frag-120",
+    "title": "Chose Not to Go There",
+    "chronological_order": 15,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [],
+    "warnings": [],
+    "stage": "courting",
+    "reviewed": true
+  },
+  {
+    "id": "frag-124",
+    "title": "You Don't Know Yet",
+    "chronological_order": 16,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [],
+    "warnings": [],
+    "stage": "courting",
+    "reviewed": true
+  },
+  {
+    "id": "frag-204",
+    "title": "Bad Dates",
     "chronological_order": 17,
     "requires": [],
     "required_pool_count": 0,
@@ -211,31 +207,9 @@
     "reviewed": true
   },
   {
-    "id": "frag-120",
-    "title": "Chose Not to Go There",
-    "chronological_order": 19,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [],
-    "warnings": [],
-    "stage": "courting",
-    "reviewed": true
-  },
-  {
-    "id": "frag-124",
-    "title": "You Don't Know Yet",
-    "chronological_order": 20,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [],
-    "warnings": [],
-    "stage": "courting",
-    "reviewed": true
-  },
-  {
     "id": "frag-126",
     "title": "Do You Dream of the Past",
-    "chronological_order": 21,
+    "chronological_order": 19,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -246,7 +220,7 @@
   {
     "id": "frag-127",
     "title": "Not a Bachelor's Degree",
-    "chronological_order": 22,
+    "chronological_order": 20,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -257,7 +231,7 @@
   {
     "id": "frag-163",
     "title": "Local Date and Time",
-    "chronological_order": 23,
+    "chronological_order": 21,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -268,73 +242,7 @@
   {
     "id": "frag-182",
     "title": "In Five Years",
-    "chronological_order": 24,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [],
-    "warnings": [],
-    "stage": "courting",
-    "reviewed": true
-  },
-  {
-    "id": "frag-187",
-    "title": "Truth or Dare",
-    "chronological_order": 25,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [],
-    "warnings": [],
-    "stage": "courting",
-    "reviewed": true
-  },
-  {
-    "id": "frag-192",
-    "title": "Inevitable Love",
-    "chronological_order": 26,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [],
-    "warnings": [],
-    "stage": "courting",
-    "reviewed": true
-  },
-  {
-    "id": "frag-195",
-    "title": "Saying the Wrong Thing",
-    "chronological_order": 27,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [],
-    "warnings": [],
-    "stage": "courting",
-    "reviewed": true
-  },
-  {
-    "id": "frag-199",
-    "title": "Close Friends",
-    "chronological_order": 28,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [],
-    "warnings": [],
-    "stage": "courting",
-    "reviewed": true
-  },
-  {
-    "id": "frag-201",
-    "title": "Hobbies",
-    "chronological_order": 29,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [],
-    "warnings": [],
-    "stage": "courting",
-    "reviewed": true
-  },
-  {
-    "id": "frag-204",
-    "title": "Bad Dates",
-    "chronological_order": 30,
+    "chronological_order": 22,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -345,7 +253,7 @@
   {
     "id": "frag-018",
     "title": "The Cafe Paradox",
-    "chronological_order": 31,
+    "chronological_order": 23,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -356,9 +264,92 @@
     "reviewed": true
   },
   {
+    "id": "frag-195",
+    "title": "Saying the Wrong Thing",
+    "chronological_order": 24,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [],
+    "warnings": [],
+    "stage": "courting",
+    "reviewed": true
+  },
+  {
+    "id": "frag-199",
+    "title": "Close Friends",
+    "chronological_order": 25,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [],
+    "warnings": [],
+    "stage": "courting",
+    "reviewed": true
+  },
+  {
+    "id": "frag-116",
+    "title": "Very Bad Detective",
+    "chronological_order": 26,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [
+      "explain-futuresight"
+    ],
+    "warnings": [],
+    "stage": "courting",
+    "reviewed": true
+  },
+  {
+    "id": "frag-100",
+    "title": "Arrival",
+    "chronological_order": 27,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [],
+    "warnings": [],
+    "stage": "courting",
+    "reviewed": true
+  },
+  {
+    "id": "frag-030",
+    "title": "Teaching Time Travel",
+    "chronological_order": 28,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [],
+    "warnings": [],
+    "stage": "courting",
+    "reviewed": true
+  },
+  {
+    "id": "frag-037",
+    "title": "Telling Myself Later",
+    "chronological_order": 29,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [
+      "trans"
+    ],
+    "warnings": [],
+    "stage": "courting",
+    "reviewed": true
+  },
+  {
+    "id": "frag-151",
+    "title": "Good Goalkeeper",
+    "chronological_order": 30,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [
+      "explain-futuresight"
+    ],
+    "warnings": [],
+    "stage": "courting",
+    "reviewed": true
+  },
+  {
     "id": "frag-019",
     "title": "Accidental Flashforward",
-    "chronological_order": 32,
+    "chronological_order": 31,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -371,7 +362,7 @@
   {
     "id": "frag-020",
     "title": "Better Safe Than Sorry",
-    "chronological_order": 33,
+    "chronological_order": 32,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -382,7 +373,7 @@
   {
     "id": "frag-021",
     "title": "It's Pasta",
-    "chronological_order": 34,
+    "chronological_order": 33,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -393,73 +384,31 @@
     "reviewed": true
   },
   {
-    "id": "frag-025",
-    "title": "What's for Dinner",
+    "id": "frag-032",
+    "title": "Just Observant",
+    "chronological_order": 34,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [],
+    "warnings": [],
+    "stage": "partnered",
+    "reviewed": true
+  },
+  {
+    "id": "frag-154",
+    "title": "No Timeline Where I Worked Out",
     "chronological_order": 35,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [
-      "Pasta"
-    ],
-    "warnings": [],
-    "stage": "partnered",
-    "reviewed": true
-  },
-  {
-    "id": "frag-028",
-    "title": "The Unopened Club",
-    "chronological_order": 36,
-    "requires": [],
-    "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "partnered",
-    "reviewed": true
-  },
-  {
-    "id": "frag-032",
-    "title": "Just Observant",
-    "chronological_order": 37,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [],
-    "warnings": [],
-    "stage": "partnered",
-    "reviewed": true
-  },
-  {
-    "id": "frag-033",
-    "title": "The Proposal",
-    "chronological_order": 38,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [
-      "Proposal",
-      "Surprise"
-    ],
-    "warnings": [
-      "sexual-content"
-    ],
-    "stage": "partnered",
-    "reviewed": true
-  },
-  {
-    "id": "frag-034",
-    "title": "You Will Regret Nothing",
-    "chronological_order": 39,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [
-      "death"
-    ],
-    "warnings": [],
-    "stage": "partnered",
+    "stage": "courting",
     "reviewed": true
   },
   {
     "id": "frag-035",
     "title": "Anniversary of My Death",
-    "chronological_order": 40,
+    "chronological_order": 36,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -472,7 +421,7 @@
   {
     "id": "frag-038",
     "title": "Books and Spoilers",
-    "chronological_order": 41,
+    "chronological_order": 37,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -483,9 +432,22 @@
     "reviewed": true
   },
   {
+    "id": "frag-025",
+    "title": "What's for Dinner",
+    "chronological_order": 38,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [
+      "Pasta"
+    ],
+    "warnings": [],
+    "stage": "partnered",
+    "reviewed": true
+  },
+  {
     "id": "frag-046",
     "title": "Charades",
-    "chronological_order": 42,
+    "chronological_order": 39,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -496,7 +458,7 @@
   {
     "id": "frag-060",
     "title": "Next Birthday Memory",
-    "chronological_order": 43,
+    "chronological_order": 40,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -509,7 +471,7 @@
   {
     "id": "frag-062",
     "title": "No Trace of a Catastrophe",
-    "chronological_order": 44,
+    "chronological_order": 41,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -520,39 +482,9 @@
     "reviewed": true
   },
   {
-    "id": "frag-064",
-    "title": "I Know",
-    "chronological_order": 45,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [
-      "Perspective"
-    ],
-    "warnings": [],
-    "stage": "partnered",
-    "reviewed": true
-  },
-  {
-    "id": "frag-087",
-    "title": "Fuck My Aunt",
-    "chronological_order": 46,
-    "requires": [
-      "Proposal"
-    ],
-    "required_pool_count": 0,
-    "tags": [
-      "marriage"
-    ],
-    "warnings": [
-      "strong-language"
-    ],
-    "stage": "partnered",
-    "reviewed": true
-  },
-  {
     "id": "frag-088",
     "title": "No Disappointment",
-    "chronological_order": 47,
+    "chronological_order": 42,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -563,7 +495,7 @@
   {
     "id": "frag-091",
     "title": "The Most Fun Way to Stop You",
-    "chronological_order": 48,
+    "chronological_order": 43,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -574,18 +506,7 @@
   {
     "id": "frag-096",
     "title": "That's Not Why You Call",
-    "chronological_order": 49,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [],
-    "warnings": [],
-    "stage": "partnered",
-    "reviewed": true
-  },
-  {
-    "id": "frag-100",
-    "title": "Arrival",
-    "chronological_order": 50,
+    "chronological_order": 44,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -596,7 +517,7 @@
   {
     "id": "frag-106",
     "title": "Stay Curious",
-    "chronological_order": 51,
+    "chronological_order": 46,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -607,7 +528,7 @@
   {
     "id": "frag-107",
     "title": "I Like Talking to You",
-    "chronological_order": 52,
+    "chronological_order": 47,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -616,9 +537,20 @@
     "reviewed": true
   },
   {
+    "id": "frag-201",
+    "title": "Hobbies",
+    "chronological_order": 47,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [],
+    "warnings": [],
+    "stage": "courting",
+    "reviewed": true
+  },
+  {
     "id": "frag-108",
     "title": "Time Traveling",
-    "chronological_order": 53,
+    "chronological_order": 48,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -629,7 +561,7 @@
   {
     "id": "frag-110",
     "title": "The Big Things",
-    "chronological_order": 54,
+    "chronological_order": 49,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -642,7 +574,7 @@
   {
     "id": "frag-111",
     "title": "I've Always Known You",
-    "chronological_order": 55,
+    "chronological_order": 50,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -653,7 +585,7 @@
   {
     "id": "frag-114",
     "title": "Still Says Sunny",
-    "chronological_order": 56,
+    "chronological_order": 51,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -662,22 +594,20 @@
     "reviewed": true
   },
   {
-    "id": "frag-116",
-    "title": "Very Bad Detective",
-    "chronological_order": 57,
+    "id": "frag-132",
+    "title": "Why Would I Want to Live Through That",
+    "chronological_order": 52,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [
-      "explain-futuresight"
-    ],
+    "tags": [],
     "warnings": [],
-    "stage": "partnered",
+    "stage": "courting",
     "reviewed": true
   },
   {
     "id": "frag-121",
     "title": "Anything Worth Remembering",
-    "chronological_order": 58,
+    "chronological_order": 53,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -688,7 +618,7 @@
   {
     "id": "frag-125",
     "title": "Requires Concentration",
-    "chronological_order": 59,
+    "chronological_order": 54,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -699,10 +629,8 @@
   {
     "id": "frag-128",
     "title": "To Learn Not to Pass",
-    "chronological_order": 60,
-    "requires": [
-      "frag-003"
-    ],
+    "chronological_order": 55,
+    "requires": [],
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
@@ -712,7 +640,7 @@
   {
     "id": "frag-129",
     "title": "I Was a Teenager",
-    "chronological_order": 61,
+    "chronological_order": 56,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -724,33 +652,22 @@
     "reviewed": true
   },
   {
-    "id": "frag-131",
-    "title": "Like a Wound Closing",
-    "chronological_order": 62,
+    "id": "frag-057",
+    "title": "Like the Day I Was Born",
+    "chronological_order": 58,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
-      "explain-futuresight"
+      "love"
     ],
     "warnings": [],
-    "stage": "partnered",
-    "reviewed": true
-  },
-  {
-    "id": "frag-132",
-    "title": "Why Would I Want to Live Through That",
-    "chronological_order": 63,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [],
-    "warnings": [],
-    "stage": "partnered",
+    "stage": "courting",
     "reviewed": true
   },
   {
     "id": "frag-133",
     "title": "I Pick Because You're Indecisive",
-    "chronological_order": 64,
+    "chronological_order": 58,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -761,7 +678,7 @@
   {
     "id": "frag-134",
     "title": "The Dangling Timeline",
-    "chronological_order": 65,
+    "chronological_order": 59,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -774,7 +691,7 @@
   {
     "id": "frag-135",
     "title": "If You Are Aware of This Moment",
-    "chronological_order": 66,
+    "chronological_order": 60,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -785,7 +702,7 @@
   {
     "id": "frag-136",
     "title": "Not a Paradox, Just Less Smooth",
-    "chronological_order": 67,
+    "chronological_order": 61,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -794,9 +711,9 @@
     "reviewed": true
   },
   {
-    "id": "frag-138",
-    "title": "Deterministic Branches",
-    "chronological_order": 68,
+    "id": "frag-139",
+    "title": "The Only Variable",
+    "chronological_order": 62,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -807,9 +724,9 @@
     "reviewed": true
   },
   {
-    "id": "frag-139",
-    "title": "The Only Variable",
-    "chronological_order": 69,
+    "id": "frag-138",
+    "title": "Deterministic Branches",
+    "chronological_order": 63,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -822,7 +739,7 @@
   {
     "id": "frag-147",
     "title": "I Don't Change Good Things",
-    "chronological_order": 70,
+    "chronological_order": 64,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -833,7 +750,7 @@
   {
     "id": "frag-149",
     "title": "Where Ideas Come From",
-    "chronological_order": 71,
+    "chronological_order": 65,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -842,33 +759,33 @@
     "reviewed": true
   },
   {
-    "id": "frag-151",
-    "title": "Good Goalkeeper",
-    "chronological_order": 72,
+    "id": "frag-192",
+    "title": "Inevitable Love",
+    "chronological_order": 66,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [],
+    "warnings": [],
+    "stage": "courting",
+    "reviewed": true
+  },
+  {
+    "id": "frag-034",
+    "title": "You Will Regret Nothing",
+    "chronological_order": 67,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
-      "explain-futuresight"
+      "death"
     ],
     "warnings": [],
-    "stage": "partnered",
-    "reviewed": true
-  },
-  {
-    "id": "frag-152",
-    "title": "I Remember the Answer",
-    "chronological_order": 73,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [],
-    "warnings": [],
-    "stage": "partnered",
+    "stage": "courting",
     "reviewed": true
   },
   {
     "id": "frag-153",
     "title": "When It Happens",
-    "chronological_order": 74,
+    "chronological_order": 68,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -882,9 +799,20 @@
     "reviewed": true
   },
   {
-    "id": "frag-154",
-    "title": "No Timeline Where I Worked Out",
-    "chronological_order": 75,
+    "id": "frag-152",
+    "title": "I Remember the Answer",
+    "chronological_order": 69,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [],
+    "warnings": [],
+    "stage": "courting",
+    "reviewed": true
+  },
+  {
+    "id": "frag-028",
+    "title": "The Unopened Club",
+    "chronological_order": 70,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -895,7 +823,7 @@
   {
     "id": "frag-155",
     "title": "Neither of Us Knows What Time",
-    "chronological_order": 76,
+    "chronological_order": 71,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -906,20 +834,20 @@
   {
     "id": "frag-156",
     "title": "Can't Win at Roulette",
-    "chronological_order": 77,
+    "chronological_order": 72,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
       "lottery"
     ],
     "warnings": [],
-    "stage": "partnered",
+    "stage": "courting",
     "reviewed": true
   },
   {
     "id": "frag-157",
     "title": "Good Luck With Your Thing",
-    "chronological_order": 78,
+    "chronological_order": 73,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -932,7 +860,7 @@
   {
     "id": "frag-167",
     "title": "Information Horizon",
-    "chronological_order": 79,
+    "chronological_order": 74,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -946,7 +874,7 @@
   {
     "id": "frag-168",
     "title": "Preventative Measures",
-    "chronological_order": 80,
+    "chronological_order": 75,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -957,7 +885,7 @@
   {
     "id": "frag-173",
     "title": "What I Needed",
-    "chronological_order": 81,
+    "chronological_order": 76,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -968,7 +896,7 @@
   {
     "id": "frag-174",
     "title": "Still Loving the Ex",
-    "chronological_order": 82,
+    "chronological_order": 77,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -977,9 +905,22 @@
     "reviewed": true
   },
   {
+    "id": "frag-064",
+    "title": "I Know",
+    "chronological_order": 78,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [
+      "Perspective"
+    ],
+    "warnings": [],
+    "stage": "partnered",
+    "reviewed": true
+  },
+  {
     "id": "frag-175",
     "title": "Only If You Agree",
-    "chronological_order": 83,
+    "chronological_order": 79,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -990,7 +931,7 @@
   {
     "id": "frag-183",
     "title": "Lose-Lose Situation",
-    "chronological_order": 84,
+    "chronological_order": 80,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -1001,7 +942,7 @@
   {
     "id": "frag-184",
     "title": "The Future That Exists",
-    "chronological_order": 85,
+    "chronological_order": 81,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -1012,7 +953,7 @@
   {
     "id": "frag-194",
     "title": "Bootstrap Paradox",
-    "chronological_order": 86,
+    "chronological_order": 82,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -1025,7 +966,18 @@
   {
     "id": "frag-196",
     "title": "Doing the Wrong Thing",
-    "chronological_order": 87,
+    "chronological_order": 83,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [],
+    "warnings": [],
+    "stage": "partnered",
+    "reviewed": true
+  },
+  {
+    "id": "frag-187",
+    "title": "Truth or Dare",
+    "chronological_order": 84,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -1036,7 +988,7 @@
   {
     "id": "frag-197",
     "title": "Because You Believe You Can",
-    "chronological_order": 88,
+    "chronological_order": 85,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -1045,9 +997,22 @@
     "reviewed": true
   },
   {
+    "id": "frag-131",
+    "title": "Like a Wound Closing",
+    "chronological_order": 86,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [
+      "explain-futuresight"
+    ],
+    "warnings": [],
+    "stage": "partnered",
+    "reviewed": true
+  },
+  {
     "id": "frag-198",
     "title": "Muscle Spasm",
-    "chronological_order": 89,
+    "chronological_order": 87,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -1058,7 +1023,7 @@
   {
     "id": "frag-200",
     "title": "Meeting the Parents",
-    "chronological_order": 90,
+    "chronological_order": 88,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -1069,11 +1034,44 @@
   {
     "id": "frag-202",
     "title": "Looking at the Stars",
-    "chronological_order": 91,
+    "chronological_order": 89,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
+    "stage": "partnered",
+    "reviewed": true
+  },
+  {
+    "id": "frag-033",
+    "title": "The Proposal",
+    "chronological_order": 90,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [
+      "Proposal",
+      "Surprise"
+    ],
+    "warnings": [
+      "sexual-content"
+    ],
+    "stage": "partnered",
+    "reviewed": true
+  },
+  {
+    "id": "frag-087",
+    "title": "Fuck My Aunt",
+    "chronological_order": 91,
+    "requires": [
+      "Proposal"
+    ],
+    "required_pool_count": 0,
+    "tags": [
+      "marriage"
+    ],
+    "warnings": [
+      "strong-language"
+    ],
     "stage": "partnered",
     "reviewed": true
   },
@@ -1102,7 +1100,7 @@
     "warnings": [
       "sexual-content"
     ],
-    "stage": "married",
+    "stage": "partnered",
     "reviewed": true
   },
   {
@@ -1132,25 +1130,9 @@
     "reviewed": true
   },
   {
-    "id": "frag-036",
-    "title": "Next Month Is Better",
-    "chronological_order": 96,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [
-      "pregnancy",
-      "sex"
-    ],
-    "warnings": [
-      "sexual-content"
-    ],
-    "stage": "married",
-    "reviewed": true
-  },
-  {
     "id": "frag-039",
     "title": "Checking the Right Thing to Say",
-    "chronological_order": 97,
+    "chronological_order": 96,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -1163,7 +1145,7 @@
   {
     "id": "frag-040",
     "title": "Taking Out the Trash",
-    "chronological_order": 98,
+    "chronological_order": 97,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -1172,22 +1154,9 @@
     "reviewed": true
   },
   {
-    "id": "frag-041",
-    "title": "The Time Slot",
-    "chronological_order": 99,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [
-      "pregnancy"
-    ],
-    "warnings": [],
-    "stage": "married",
-    "reviewed": true
-  },
-  {
     "id": "frag-047",
     "title": "The Novel",
-    "chronological_order": 100,
+    "chronological_order": 98,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -1198,7 +1167,7 @@
   {
     "id": "frag-050",
     "title": "Time Traveling Children",
-    "chronological_order": 101,
+    "chronological_order": 99,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -1211,7 +1180,7 @@
   {
     "id": "frag-058",
     "title": "Not September",
-    "chronological_order": 102,
+    "chronological_order": 100,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -1224,7 +1193,7 @@
   {
     "id": "frag-086",
     "title": "Do It Anyway",
-    "chronological_order": 103,
+    "chronological_order": 101,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -1237,7 +1206,7 @@
   {
     "id": "frag-090",
     "title": "Free Food Tastes Better",
-    "chronological_order": 104,
+    "chronological_order": 102,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -1250,7 +1219,7 @@
   {
     "id": "frag-099",
     "title": "I Am Always Right",
-    "chronological_order": 105,
+    "chronological_order": 103,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -1259,22 +1228,9 @@
     "reviewed": true
   },
   {
-    "id": "frag-101",
-    "title": "You Wrote a Novel",
-    "chronological_order": 106,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [
-      "novel"
-    ],
-    "warnings": [],
-    "stage": "married",
-    "reviewed": true
-  },
-  {
     "id": "frag-102",
     "title": "Pretend You Don't Know",
-    "chronological_order": 107,
+    "chronological_order": 104,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -1287,7 +1243,7 @@
   {
     "id": "frag-103",
     "title": "Moving On From Lottery",
-    "chronological_order": 108,
+    "chronological_order": 105,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -1300,7 +1256,7 @@
   {
     "id": "frag-112",
     "title": "Touché",
-    "chronological_order": 109,
+    "chronological_order": 106,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -1311,7 +1267,7 @@
   {
     "id": "frag-118",
     "title": "Flashforward to Next Week",
-    "chronological_order": 110,
+    "chronological_order": 107,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -1322,11 +1278,37 @@
   {
     "id": "frag-123",
     "title": "The Fake Appointment",
-    "chronological_order": 111,
+    "chronological_order": 108,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
       "banter"
+    ],
+    "warnings": [],
+    "stage": "married",
+    "reviewed": true
+  },
+  {
+    "id": "frag-137",
+    "title": "Almost Certainly a Simulation",
+    "chronological_order": 110,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [
+      "simulation"
+    ],
+    "warnings": [],
+    "stage": "partnered",
+    "reviewed": true
+  },
+  {
+    "id": "frag-146",
+    "title": "Information Horizon",
+    "chronological_order": 111,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [
+      "information-horizon"
     ],
     "warnings": [],
     "stage": "married",
@@ -1340,52 +1322,26 @@
     "required_pool_count": 0,
     "tags": [],
     "warnings": [],
-    "stage": "married",
-    "reviewed": true
-  },
-  {
-    "id": "frag-137",
-    "title": "Almost Certainly a Simulation",
-    "chronological_order": 113,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [
-      "simulation"
-    ],
-    "warnings": [],
-    "stage": "married",
-    "reviewed": true
-  },
-  {
-    "id": "frag-146",
-    "title": "Information Horizon",
-    "chronological_order": 114,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [
-      "information-horizon"
-    ],
-    "warnings": [],
-    "stage": "married",
+    "stage": "courting",
     "reviewed": true
   },
   {
     "id": "frag-158",
     "title": "I Think I'm Vegan",
-    "chronological_order": 115,
+    "chronological_order": 112,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
       "vegan"
     ],
     "warnings": [],
-    "stage": "married",
+    "stage": "partnered",
     "reviewed": true
   },
   {
     "id": "frag-164",
     "title": "You Stopped Me",
-    "chronological_order": 116,
+    "chronological_order": 113,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -1398,7 +1354,7 @@
   {
     "id": "frag-166",
     "title": "Just Going to Be Dirty Again",
-    "chronological_order": 117,
+    "chronological_order": 114,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -1409,7 +1365,7 @@
   {
     "id": "frag-180",
     "title": "Bad Dreams",
-    "chronological_order": 118,
+    "chronological_order": 115,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -1418,9 +1374,38 @@
     "reviewed": true
   },
   {
+    "id": "frag-101",
+    "title": "You Wrote a Novel",
+    "chronological_order": 116,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [
+      "novel"
+    ],
+    "warnings": [],
+    "stage": "married",
+    "reviewed": true
+  },
+  {
+    "id": "frag-036",
+    "title": "Next Month Is Better",
+    "chronological_order": 117,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [
+      "pregnancy",
+      "sex"
+    ],
+    "warnings": [
+      "sexual-content"
+    ],
+    "stage": "married",
+    "reviewed": true
+  },
+  {
     "id": "frag-186",
     "title": "Unforeseen Circumstances",
-    "chronological_order": 119,
+    "chronological_order": 118,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -1431,7 +1416,7 @@
   {
     "id": "frag-188",
     "title": "AI Takeover",
-    "chronological_order": 120,
+    "chronological_order": 119,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -1444,10 +1429,23 @@
   {
     "id": "frag-203",
     "title": "Investing Philosophy",
-    "chronological_order": 121,
+    "chronological_order": 120,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
+    "warnings": [],
+    "stage": "married",
+    "reviewed": true
+  },
+  {
+    "id": "frag-041",
+    "title": "The Time Slot",
+    "chronological_order": 121,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [
+      "pregnancy"
+    ],
     "warnings": [],
     "stage": "married",
     "reviewed": true
@@ -1479,8 +1477,8 @@
     "reviewed": true
   },
   {
-    "id": "frag-044",
-    "title": "The Best Sushi",
+    "id": "frag-049",
+    "title": "The Due Date",
     "chronological_order": 124,
     "requires": [],
     "required_pool_count": 0,
@@ -1492,8 +1490,8 @@
     "reviewed": true
   },
   {
-    "id": "frag-045",
-    "title": "The Future Muffins",
+    "id": "frag-048",
+    "title": "They Don't Know",
     "chronological_order": 125,
     "requires": [],
     "required_pool_count": 0,
@@ -1503,9 +1501,22 @@
     "reviewed": true
   },
   {
-    "id": "frag-048",
-    "title": "They Don't Know",
+    "id": "frag-059",
+    "title": "The Kids Paradox",
     "chronological_order": 126,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [
+      "parenting"
+    ],
+    "warnings": [],
+    "stage": "pregnancy",
+    "reviewed": true
+  },
+  {
+    "id": "frag-045",
+    "title": "The Future Muffins",
+    "chronological_order": 127,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -1514,9 +1525,9 @@
     "reviewed": true
   },
   {
-    "id": "frag-049",
-    "title": "The Due Date",
-    "chronological_order": 127,
+    "id": "frag-144",
+    "title": "I Checked Up on You",
+    "chronological_order": 128,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -1527,9 +1538,53 @@
     "reviewed": true
   },
   {
+    "id": "frag-178",
+    "title": "Pregnancy Cravings",
+    "chronological_order": 129,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [],
+    "warnings": [],
+    "stage": "pregnancy",
+    "reviewed": true
+  },
+  {
+    "id": "frag-185",
+    "title": "Painting the Nursery",
+    "chronological_order": 130,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [],
+    "warnings": [],
+    "stage": "pregnancy",
+    "reviewed": true
+  },
+  {
+    "id": "frag-189",
+    "title": "Information That Didn't Stick",
+    "chronological_order": 131,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [],
+    "warnings": [],
+    "stage": "pregnancy",
+    "reviewed": true
+  },
+  {
+    "id": "frag-190",
+    "title": "Bilingual Kids",
+    "chronological_order": 132,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [],
+    "warnings": [],
+    "stage": "pregnancy",
+    "reviewed": true
+  },
+  {
     "id": "frag-051",
     "title": "Future-Me Decided",
-    "chronological_order": 128,
+    "chronological_order": 133,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -1543,92 +1598,22 @@
     "reviewed": true
   },
   {
-    "id": "frag-059",
-    "title": "The Kids Paradox",
-    "chronological_order": 129,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [
-      "parenting"
-    ],
-    "warnings": [],
-    "stage": "pregnancy",
-    "reviewed": true
-  },
-  {
-    "id": "frag-144",
-    "title": "I Checked Up on You",
-    "chronological_order": 130,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [
-      "pregnancy"
-    ],
-    "warnings": [],
-    "stage": "pregnancy",
-    "reviewed": true
-  },
-  {
-    "id": "frag-178",
-    "title": "Pregnancy Cravings",
-    "chronological_order": 131,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [],
-    "warnings": [],
-    "stage": "pregnancy",
-    "reviewed": true
-  },
-  {
-    "id": "frag-185",
-    "title": "Painting the Nursery",
-    "chronological_order": 132,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [],
-    "warnings": [],
-    "stage": "pregnancy",
-    "reviewed": true
-  },
-  {
-    "id": "frag-189",
-    "title": "Information That Didn't Stick",
-    "chronological_order": 133,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [],
-    "warnings": [],
-    "stage": "pregnancy",
-    "reviewed": true
-  },
-  {
-    "id": "frag-190",
-    "title": "Bilingual Kids",
+    "id": "frag-044",
+    "title": "The Best Sushi",
     "chronological_order": 134,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [],
+    "tags": [
+      "pregnancy"
+    ],
     "warnings": [],
     "stage": "pregnancy",
     "reviewed": true
   },
   {
-    "id": "frag-052",
-    "title": "You Were Right",
+    "id": "frag-097",
+    "title": "Pasketti",
     "chronological_order": 135,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [
-      "pregnancy"
-    ],
-    "warnings": [],
-    "stage": "parenting-young",
-    "reviewed": true
-  },
-  {
-    "id": "frag-053",
-    "title": "He Doesn't Know Yet",
-    "chronological_order": 136,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -1641,12 +1626,25 @@
   {
     "id": "frag-054",
     "title": "We Got This",
-    "chronological_order": 137,
+    "chronological_order": 136,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
       "parenting",
       "Perspective"
+    ],
+    "warnings": [],
+    "stage": "parenting-young",
+    "reviewed": true
+  },
+  {
+    "id": "frag-053",
+    "title": "He Doesn't Know Yet",
+    "chronological_order": 137,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [
+      "parenting"
     ],
     "warnings": [],
     "stage": "parenting-young",
@@ -1679,51 +1677,9 @@
     "reviewed": true
   },
   {
-    "id": "frag-065",
-    "title": "Adopting",
-    "chronological_order": 140,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [
-      "family"
-    ],
-    "warnings": [],
-    "stage": "parenting-young",
-    "reviewed": true
-  },
-  {
-    "id": "frag-066",
-    "title": "You're Not Happy",
-    "chronological_order": 141,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [
-      "poly"
-    ],
-    "warnings": [
-      "open-relationship"
-    ],
-    "stage": "parenting-young",
-    "reviewed": true
-  },
-  {
-    "id": "frag-067",
-    "title": "Tell Me Everything",
-    "chronological_order": 142,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [
-      "poly",
-      "explain-causality"
-    ],
-    "warnings": [],
-    "stage": "parenting-young",
-    "reviewed": true
-  },
-  {
     "id": "frag-068",
     "title": "Learning From Mistakes",
-    "chronological_order": 143,
+    "chronological_order": 140,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -1736,7 +1692,7 @@
   {
     "id": "frag-069",
     "title": "Not Going Badly",
-    "chronological_order": 144,
+    "chronological_order": 141,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -1749,7 +1705,7 @@
   {
     "id": "frag-072",
     "title": "Just Fucking With You",
-    "chronological_order": 145,
+    "chronological_order": 142,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -1761,22 +1717,9 @@
     "reviewed": true
   },
   {
-    "id": "frag-073",
-    "title": "Did It Work",
-    "chronological_order": 146,
-    "requires": [],
-    "required_pool_count": 0,
-    "tags": [
-      "poly"
-    ],
-    "warnings": [],
-    "stage": "parenting-young",
-    "reviewed": true
-  },
-  {
     "id": "frag-074",
     "title": "Introductions",
-    "chronological_order": 147,
+    "chronological_order": 143,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -1790,7 +1733,7 @@
   {
     "id": "frag-074b",
     "title": "You Like Her",
-    "chronological_order": 148,
+    "chronological_order": 144,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -1803,7 +1746,7 @@
   {
     "id": "frag-075",
     "title": "If I Did",
-    "chronological_order": 149,
+    "chronological_order": 145,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -1821,7 +1764,7 @@
   {
     "id": "frag-076",
     "title": "No Regrets, Did My Best",
-    "chronological_order": 150,
+    "chronological_order": 146,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -1838,7 +1781,7 @@
   {
     "id": "frag-077",
     "title": "You Did It All by Yourself",
-    "chronological_order": 151,
+    "chronological_order": 147,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -1851,7 +1794,7 @@
   {
     "id": "frag-078",
     "title": "Get the Fuck Out",
-    "chronological_order": 152,
+    "chronological_order": 148,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -1866,7 +1809,7 @@
   {
     "id": "frag-079",
     "title": "Still Scary",
-    "chronological_order": 153,
+    "chronological_order": 149,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -1879,7 +1822,7 @@
   {
     "id": "frag-080",
     "title": "Distracted by a Fight",
-    "chronological_order": 154,
+    "chronological_order": 150,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -1890,9 +1833,35 @@
     "reviewed": true
   },
   {
+    "id": "frag-065",
+    "title": "Adopting",
+    "chronological_order": 151,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [
+      "family"
+    ],
+    "warnings": [],
+    "stage": "parenting-young",
+    "reviewed": true
+  },
+  {
+    "id": "frag-052",
+    "title": "You Were Right",
+    "chronological_order": 152,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [
+      "pregnancy"
+    ],
+    "warnings": [],
+    "stage": "parenting-young",
+    "reviewed": true
+  },
+  {
     "id": "frag-081",
     "title": "I Love Torturing You",
-    "chronological_order": 155,
+    "chronological_order": 153,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -1906,7 +1875,7 @@
   {
     "id": "frag-083",
     "title": "All of Them",
-    "chronological_order": 156,
+    "chronological_order": 154,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -1919,7 +1888,7 @@
   {
     "id": "frag-084",
     "title": "The Poker Watch",
-    "chronological_order": 157,
+    "chronological_order": 155,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -1932,7 +1901,7 @@
   {
     "id": "frag-089",
     "title": "Broken Arm",
-    "chronological_order": 158,
+    "chronological_order": 156,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -1945,7 +1914,7 @@
   {
     "id": "frag-093",
     "title": "Does It Matter",
-    "chronological_order": 159,
+    "chronological_order": 157,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -1956,22 +1925,24 @@
     "reviewed": true
   },
   {
-    "id": "frag-097",
-    "title": "Pasketti",
-    "chronological_order": 160,
+    "id": "frag-066",
+    "title": "You're Not Happy",
+    "chronological_order": 158,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
-      "parenting"
+      "poly"
     ],
-    "warnings": [],
+    "warnings": [
+      "open-relationship"
+    ],
     "stage": "parenting-young",
     "reviewed": true
   },
   {
     "id": "frag-119",
     "title": "Small Falls",
-    "chronological_order": 161,
+    "chronological_order": 159,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -1984,7 +1955,7 @@
   {
     "id": "frag-143",
     "title": "Worth a Try",
-    "chronological_order": 162,
+    "chronological_order": 160,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -1997,7 +1968,7 @@
   {
     "id": "frag-145",
     "title": "They're Healthy",
-    "chronological_order": 163,
+    "chronological_order": 161,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -2011,7 +1982,7 @@
   {
     "id": "frag-148",
     "title": "Wait and See",
-    "chronological_order": 164,
+    "chronological_order": 162,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -2024,7 +1995,7 @@
   {
     "id": "frag-150",
     "title": "The Bicycle",
-    "chronological_order": 165,
+    "chronological_order": 163,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -2038,7 +2009,7 @@
   {
     "id": "frag-160",
     "title": "Can't Track Chaos",
-    "chronological_order": 166,
+    "chronological_order": 164,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -2051,7 +2022,7 @@
   {
     "id": "frag-161",
     "title": "Next Week It's Only Sweet Potatoes",
-    "chronological_order": 167,
+    "chronological_order": 165,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -2064,7 +2035,7 @@
   {
     "id": "frag-162",
     "title": "She's Not Spilling It",
-    "chronological_order": 168,
+    "chronological_order": 166,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -2077,7 +2048,7 @@
   {
     "id": "frag-165",
     "title": "Doesn't Take Time Travel",
-    "chronological_order": 169,
+    "chronological_order": 167,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
@@ -2090,7 +2061,7 @@
   {
     "id": "frag-169",
     "title": "Vegan in the Future",
-    "chronological_order": 170,
+    "chronological_order": 168,
     "requires": [],
     "required_pool_count": 0,
     "tags": [],
@@ -2101,11 +2072,38 @@
   {
     "id": "frag-176",
     "title": "Not That I Recall",
-    "chronological_order": 171,
+    "chronological_order": 169,
     "requires": [],
     "required_pool_count": 0,
     "tags": [
       "poly"
+    ],
+    "warnings": [],
+    "stage": "parenting-young",
+    "reviewed": true
+  },
+  {
+    "id": "frag-073",
+    "title": "Did It Work",
+    "chronological_order": 170,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [
+      "poly"
+    ],
+    "warnings": [],
+    "stage": "parenting-young",
+    "reviewed": true
+  },
+  {
+    "id": "frag-067",
+    "title": "Tell Me Everything",
+    "chronological_order": 171,
+    "requires": [],
+    "required_pool_count": 0,
+    "tags": [
+      "poly",
+      "explain-causality"
     ],
     "warnings": [],
     "stage": "parenting-young",
