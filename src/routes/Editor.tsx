@@ -291,15 +291,24 @@ function NavigationArrows({
         </svg>
       </button>
 
-      <div className="font-semibold text-slate-300 min-w-32 text-center text-xs tracking-wider uppercase">
-        {activeFragment?.id === 'NEW' ? (
-          <span className="text-emerald-400 font-extrabold">New Fragment</span>
-        ) : (
-          <>
-            Fragment <span className="text-indigo-400">{activeIndex + 1}</span> of {sortedFragments.length}
-          </>
-        )}
-      </div>
+      {activeFragment?.id === 'NEW' ? (
+        <div className="font-semibold text-emerald-400 min-w-48 text-center text-xs tracking-wider uppercase font-extrabold py-1.5">
+          New Fragment
+        </div>
+      ) : (
+        <select
+          value={activeFragment?.id || ''}
+          onChange={(e) => navigateWithAutoSave(e.target.value)}
+          disabled={isNavigating}
+          className="bg-slate-900 border border-slate-800 text-slate-300 text-xs rounded-xl focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 px-3 py-1.5 transition-all outline-none max-w-[240px] font-semibold cursor-pointer truncate"
+        >
+          {sortedFragments.map((f, idx) => (
+            <option key={f.id} value={f.id} className="bg-slate-900 text-slate-300">
+              {idx + 1}. {f.id} {f.metadata.title ? `- ${f.metadata.title}` : ''}
+            </option>
+          ))}
+        </select>
+      )}
 
       <button
         onClick={handleNext}

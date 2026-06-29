@@ -13,14 +13,15 @@ function localEditorPlugin(): Plugin {
     name: 'local-mdx-editor',
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
-        if (!req.url?.startsWith('/api/fragments')) {
+        const urlPath = req.url?.split('?')[0] || '';
+        if (!urlPath.startsWith('/api/fragments')) {
           return next();
         }
 
         const contentDir = path.resolve(__dirname, 'src/content');
 
         // GET /api/fragments
-        if (req.method === 'GET' && req.url === '/api/fragments') {
+        if (req.method === 'GET' && urlPath === '/api/fragments') {
           try {
             const files = fs.readdirSync(contentDir);
             const mdxFiles = files.filter(f => f.endsWith('.mdx'));
@@ -56,8 +57,8 @@ function localEditorPlugin(): Plugin {
 
         // GET /api/fragments/:id/history
         // GET /api/fragments/:id/history/:hash
-        if (req.method === 'GET' && req.url.startsWith('/api/fragments/') && req.url.includes('/history')) {
-          const parts = req.url.split('?')[0].split('/');
+        if (req.method === 'GET' && urlPath.startsWith('/api/fragments/') && urlPath.includes('/history')) {
+          const parts = urlPath.split('/');
           const id = decodeURIComponent(parts[3] || '');
           const hash = parts[5] ? decodeURIComponent(parts[5]) : undefined;
 
@@ -112,8 +113,8 @@ function localEditorPlugin(): Plugin {
         }
 
         // DELETE /api/fragments/:id
-        if (req.method === 'DELETE' && req.url.startsWith('/api/fragments/')) {
-          const id = req.url.split('/')[3];
+        if (req.method === 'DELETE' && urlPath.startsWith('/api/fragments/')) {
+          const id = urlPath.split('/')[3];
           if (!id) {
             res.statusCode = 400;
             return res.end(JSON.stringify({ error: 'Missing ID' }));
@@ -130,7 +131,7 @@ function localEditorPlugin(): Plugin {
         }
 
         // POST /api/fragments/batch-update
-        if (req.method === 'POST' && req.url === '/api/fragments/batch-update') {
+        if (req.method === 'POST' && urlPath === '/api/fragments/batch-update') {
           let body = '';
           req.on('data', chunk => {
             body += chunk.toString();
@@ -170,8 +171,8 @@ function localEditorPlugin(): Plugin {
         }
 
         // POST /api/fragments/:id
-        if (req.method === 'POST' && req.url.startsWith('/api/fragments/')) {
-          const id = req.url.split('/')[3];
+        if (req.method === 'POST' && urlPath.startsWith('/api/fragments/')) {
+          const id = urlPath.split('/')[3];
           if (!id) {
             res.statusCode = 400;
             return res.end(JSON.stringify({ error: 'Missing ID' }));

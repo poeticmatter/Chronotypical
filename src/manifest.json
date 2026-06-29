@@ -2377,19 +2377,6 @@
     "chronological_order": 205,
     "requires": [],
     "required_pool_count": 0,
-    "tags": [
-      "poly"
-    ],
-    "warnings": [],
-    "stage": "poly",
-    "reviewed": true
-  },
-  {
-    "id": "frag-205",
-    "title": "",
-    "chronological_order": 205,
-    "requires": [],
-    "required_pool_count": 0,
     "tags": [],
     "warnings": [],
     "stage": "",

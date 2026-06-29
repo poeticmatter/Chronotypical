@@ -27,7 +27,7 @@ export const useEditorStore = create<EditorState>((set, get) => ({
 
   fetchFragments: async () => {
     try {
-      const res = await fetch('/api/fragments');
+      const res = await fetch(`/api/fragments?_t=${Date.now()}`);
       const data = await res.json();
       set({ fragments: data });
     } catch (error) {
