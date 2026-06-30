@@ -2112,7 +2112,7 @@
   },
   {
     "id": "frag-217",
-    "title": "",
+    "title": "It's six months away",
     "chronological_order": 218,
     "tags": [],
     "warnings": [],
@@ -2130,7 +2130,7 @@
   },
   {
     "id": "frag-219",
-    "title": "",
+    "title": "Hitting the information horizon",
     "chronological_order": 220,
     "tags": [],
     "warnings": [],
@@ -2213,6 +2213,94 @@
     ],
     "warnings": [],
     "stage": "later",
+    "reviewed": true
+  },
+  {
+    "id": "frag-229",
+    "title": "You'll want to do drugs",
+    "chronological_order": 229,
+    "tags": [
+      "Jamie"
+    ],
+    "warnings": [
+      "drugs"
+    ],
+    "stage": "parenting-teen",
+    "reviewed": true
+  },
+  {
+    "id": "frag-230",
+    "title": "No drunk driving",
+    "chronological_order": 230,
+    "tags": [],
+    "warnings": [],
+    "stage": "parenting-teen",
+    "reviewed": true
+  },
+  {
+    "id": "frag-231",
+    "title": "Jamie wants to do LSD",
+    "chronological_order": 231,
+    "tags": [
+      "Jamie",
+      "LSD"
+    ],
+    "warnings": [
+      "drugs"
+    ],
+    "stage": "parenting-teen",
+    "reviewed": true
+  },
+  {
+    "id": "frag-232",
+    "title": "Argument of Jamie doing LSD",
+    "chronological_order": 232,
+    "tags": [
+      "Jamie",
+      "LSD"
+    ],
+    "warnings": [
+      "drugs"
+    ],
+    "stage": "parenting-teen",
+    "reviewed": true
+  },
+  {
+    "id": "frag-233",
+    "title": "Do LSD with me",
+    "chronological_order": 233,
+    "tags": [
+      "Jamie",
+      "LSD"
+    ],
+    "warnings": [
+      "drugs"
+    ],
+    "stage": "parenting-teen",
+    "reviewed": true
+  },
+  {
+    "id": "frag-234",
+    "title": "Put on some music",
+    "chronological_order": 234,
+    "tags": [
+      "Jamie",
+      "LSD"
+    ],
+    "warnings": [],
+    "stage": "parenting-teen",
+    "reviewed": true
+  },
+  {
+    "id": "frag-235",
+    "title": "Making it hard to worry",
+    "chronological_order": 235,
+    "tags": [
+      "Jamie",
+      "LSD"
+    ],
+    "warnings": [],
+    "stage": "parenting-teen",
     "reviewed": true
   }
 ]

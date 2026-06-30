@@ -9,6 +9,7 @@
     "prebuild": "node scripts/manifestParser.js",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
+    "compile-chronological": "node scripts/compileChronological.js",
     "preview": "vite preview"
   },
   "dependencies": {
