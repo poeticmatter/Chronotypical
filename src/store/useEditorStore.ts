@@ -17,7 +17,7 @@ interface EditorState {
   saveFragmentsBatch: (updates: { id: string; metadata: FragmentMetadata; content: string }[]) => Promise<void>;
   deleteFragment: (id: string) => Promise<void>;
   setActiveFragment: (id: string) => void;
-  createTemporaryFragment: () => void;
+  createTemporaryFragment: (defaultStage?: string) => void;
 }
 
 export const useEditorStore = create<EditorState>((set, get) => ({
@@ -37,14 +37,19 @@ export const useEditorStore = create<EditorState>((set, get) => ({
 
   saveFragment: async (id: string, metadata: FragmentMetadata, content: string) => {
     set({ isSaving: true });
+    const targetId = id === 'NEW' ? metadata.id : id;
     try {
-      await fetch(`/api/fragments/${id}`, {
+      await fetch(`/api/fragments/${targetId}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ metadata, content }),
       });
       // Refresh the list after saving
       await get().fetchFragments();
+      // If we saved a new fragment, update activeFragmentId
+      if (get().activeFragmentId === 'NEW' || get().activeFragmentId === id) {
+        set({ activeFragmentId: targetId });
+      }
     } catch (error) {
       console.error('Failed to save fragment:', error);
     } finally {
@@ -90,7 +95,7 @@ export const useEditorStore = create<EditorState>((set, get) => ({
 
   setActiveFragment: (id: string) => set({ activeFragmentId: id }),
 
-  createTemporaryFragment: () => {
+  createTemporaryFragment: (defaultStage?: string) => {
     const { fragments } = get();
     // Find highest chronological order
     const maxOrder = fragments.reduce((max, f) => Math.max(max, f.metadata.chronological_order), 0);
@@ -103,10 +108,9 @@ export const useEditorStore = create<EditorState>((set, get) => ({
         id: newId,
         title: '',
         chronological_order: newOrder,
-        requires: [],
-        required_pool_count: 0,
         tags: [],
-        warnings: []
+        warnings: [],
+        stage: defaultStage || ''
       },
       content: ''
     };

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { useEditorStore } from '../store/useEditorStore';
 import type { EditorFragment } from '../store/useEditorStore';
 import { AnimatePresence, motion, Reorder } from 'framer-motion';
@@ -9,10 +9,44 @@ export function Editor() {
   const store = useEditorStore();
   const { fetchFragments } = store;
 
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
   // Load fragments on mount
   useEffect(() => {
     fetchFragments();
   }, [fetchFragments]);
+
+  // Listen for Ctrl+K, Cmd+K or / to open search
+  useEffect(() => {
+    const handleGlobalKeyDown = (e: KeyboardEvent) => {
+      if (
+        document.activeElement?.tagName === 'INPUT' || 
+        document.activeElement?.tagName === 'TEXTAREA' ||
+        (document.activeElement as HTMLElement)?.isContentEditable
+      ) {
+        return;
+      }
+      
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        setIsSearchOpen(true);
+      } else if (e.key === '/') {
+        e.preventDefault();
+        setIsSearchOpen(true);
+      }
+    };
+    window.addEventListener('keydown', handleGlobalKeyDown);
+    return () => window.removeEventListener('keydown', handleGlobalKeyDown);
+  }, []);
+
+  const handleSelectSearchedFragment = (id: string) => {
+    // If active fragment has unsaved changes, dispatch autosave
+    const saveEvent = new CustomEvent('editor-autosave');
+    window.dispatchEvent(saveEvent);
+    
+    setEditorMode('write');
+    store.setActiveFragment(id);
+  };
 
   // Sort fragments chronologically for sequential review
   const sortedFragments = [...store.fragments].sort((a, b) =>
@@ -176,6 +210,20 @@ export function Editor() {
 
         {/* Global actions */}
         <div className="flex items-center gap-3">
+          <button
+            onClick={() => setIsSearchOpen(true)}
+            className="text-xs bg-slate-850 hover:bg-slate-800 text-slate-350 px-3 py-1.5 rounded-lg border border-slate-700/60 transition-all font-semibold flex items-center gap-2 cursor-pointer shadow-sm hover:border-indigo-500/30 hover:text-indigo-400"
+            title="Search Fragments (Ctrl+K or /)"
+          >
+            <svg className="w-3.5 h-3.5 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.637 10.637Z" />
+            </svg>
+            <span>Search</span>
+            <kbd className="hidden sm:inline-block px-1 bg-slate-900 border border-slate-750 rounded text-[9px] font-mono text-slate-500 ml-1 font-extrabold uppercase">
+              Ctrl K
+            </kbd>
+          </button>
+          <div className="h-4 w-px bg-slate-800" />
           <a
             href="/partner"
             className="text-xs bg-slate-800/50 hover:bg-slate-800 text-slate-300 px-3 py-1.5 rounded-lg border border-slate-700/50 transition-colors"
@@ -221,6 +269,179 @@ export function Editor() {
           </div>
         )}
       </main>
+
+      <FragmentSearchModal
+        isOpen={isSearchOpen}
+        onClose={() => setIsSearchOpen(false)}
+        fragments={store.fragments}
+        onSelect={handleSelectSearchedFragment}
+      />
+    </div>
+  );
+}
+
+// Fragment Search Modal Component
+function FragmentSearchModal({
+  isOpen,
+  onClose,
+  fragments,
+  onSelect
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+  fragments: EditorFragment[];
+  onSelect: (id: string) => void;
+}) {
+  const [query, setQuery] = useState('');
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  // Filter fragments based on query
+  const filtered = useMemo(() => {
+    if (!query.trim()) {
+      return fragments.slice(0, 8); // Show first 8 by default
+    }
+    const q = query.toLowerCase();
+    return fragments.filter(f => {
+      const matchId = f.id.toLowerCase().includes(q);
+      const matchTitle = (f.metadata.title || '').toLowerCase().includes(q);
+      const matchContent = f.content.toLowerCase().includes(q);
+      const matchTags = (f.metadata.tags || []).some(t => t.toLowerCase().includes(q));
+      const matchStage = (f.metadata.stage || '').toLowerCase().includes(q);
+      return matchId || matchTitle || matchContent || matchTags || matchStage;
+    });
+  }, [query, fragments]);
+
+  // Reset selected index when query changes
+  useEffect(() => {
+    setSelectedIndex(0);
+  }, [query]);
+
+  // Handle keyboard navigation
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        setSelectedIndex(prev => (prev + 1) % Math.max(1, filtered.length));
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        setSelectedIndex(prev => (prev - 1 + filtered.length) % Math.max(1, filtered.length));
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        if (filtered[selectedIndex]) {
+          onSelect(filtered[selectedIndex].id);
+          onClose();
+        }
+      } else if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, filtered, selectedIndex, onSelect, onClose]);
+
+  if (!isOpen) return null;
+
+  return (
+    <div 
+      className="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-start justify-center p-4 pt-10 md:pt-20"
+      onClick={onClose}
+    >
+      <div 
+        className="bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl max-w-2xl w-full flex flex-col max-h-[70vh] overflow-hidden"
+        onClick={e => e.stopPropagation()}
+      >
+        {/* Search Input Bar */}
+        <div className="p-4 border-b border-slate-800 flex items-center gap-3">
+          <svg className="w-5 h-5 text-slate-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.637 10.637Z" />
+          </svg>
+          <input
+            type="text"
+            placeholder="Search fragments by ID, title, content, tags, or stage..."
+            value={query}
+            onChange={e => setQuery(e.target.value)}
+            autoFocus
+            className="w-full bg-transparent text-slate-100 placeholder-slate-500 text-sm focus:outline-none"
+          />
+          <button 
+            onClick={onClose}
+            className="text-xs bg-slate-800 hover:bg-slate-700 text-slate-400 px-2 py-1 rounded-md border border-slate-700 transition-colors"
+          >
+            ESC
+          </button>
+        </div>
+
+        {/* Results List */}
+        <div className="flex-1 overflow-y-auto p-2 space-y-1">
+          {filtered.map((frag, idx) => {
+            const isSelected = idx === selectedIndex;
+            const contentSnippet = frag.content.replace(/---[\s\S]*?---/g, '').trim();
+            const previewText = contentSnippet.length > 120 
+              ? contentSnippet.slice(0, 120) + '...' 
+              : contentSnippet;
+
+            return (
+              <div
+                key={frag.id}
+                onClick={() => {
+                  onSelect(frag.id);
+                  onClose();
+                }}
+                className={`p-3.5 rounded-xl cursor-pointer transition-colors text-left flex gap-3 items-start ${
+                  isSelected 
+                    ? 'bg-indigo-650/20 border border-indigo-500/30' 
+                    : 'border border-transparent hover:bg-slate-850/40'
+                }`}
+              >
+                <div className="space-y-1 flex-1 min-w-0">
+                  <div className="flex flex-wrap gap-2 items-center">
+                    <span className="font-mono text-xs font-bold text-indigo-400 bg-indigo-950/30 border border-indigo-900/30 px-2 py-0.5 rounded">
+                      {frag.id}
+                    </span>
+                    <span className="font-bold text-sm text-slate-200 truncate">
+                      {frag.metadata.title || "Untitled"}
+                    </span>
+                    {frag.metadata.stage && (
+                      <span className="bg-slate-800 border border-slate-700 text-slate-400 px-2 py-0.5 rounded text-[9px] uppercase font-semibold">
+                        {frag.metadata.stage}
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-xs text-slate-400 italic line-clamp-1">
+                    "{previewText}"
+                  </p>
+                  {frag.metadata.tags && frag.metadata.tags.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5 pt-1">
+                      {frag.metadata.tags.map(t => (
+                        <span key={t} className="px-1.5 py-0.5 bg-slate-950/60 border border-slate-800 text-slate-500 rounded text-[9px] font-medium">
+                          #{t}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                {isSelected && (
+                  <span className="text-[10px] bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 px-2 py-1 rounded font-bold uppercase tracking-wider shrink-0 self-center">
+                    Enter
+                  </span>
+                )}
+              </div>
+            );
+          })}
+          {filtered.length === 0 && (
+            <div className="py-8 text-center text-slate-500 text-sm italic">
+              No fragments match your search query.
+            </div>
+          )}
+        </div>
+        
+        {/* Footer */}
+        <div className="p-3 bg-slate-950/30 border-t border-slate-850 flex justify-between text-[10px] text-slate-500 uppercase font-semibold">
+          <span>Navigate: ↑↓ • Select: Enter</span>
+          <span>Total matches: {filtered.length}</span>
+        </div>
+      </div>
     </div>
   );
 }
@@ -339,7 +560,6 @@ function EditorForm({
   const [metadata, setMetadata] = useState(fragment.metadata);
   const [content, setContent] = useState(fragment.content);
   const [isAdvancedExpanded, setIsAdvancedExpanded] = useState(false);
-  const [searchTagQuery, setSearchTagQuery] = useState('');
   const [tagsInput, setTagsInput] = useState((fragment.metadata.tags || []).join(', '));
   const [isTagsFocused, setIsTagsFocused] = useState(false);
 
@@ -434,28 +654,7 @@ function EditorForm({
     setMetadata(prev => ({ ...prev, [key]: arr }));
   };
 
-  const handleRequiresInput = (value: string) => {
-    const arr = value.split(',').map(s => s.trim()).filter(Boolean);
-    setMetadata(prev => ({ ...prev, requires: arr }));
-  };
-
-  // Compile all unique tags in the system for tag-based requires selection
-  const allTagsInSystem = Array.from(
-    new Set(allFragments.flatMap(f => f.metadata.tags || []))
-  ).filter(Boolean).sort();
-
-  const toggleRequireTag = (tag: string) => {
-    setMetadata(prev => {
-      const currentRequires = prev.requires || [];
-      const isSelected = currentRequires.includes(tag);
-      return {
-        ...prev,
-        requires: isSelected
-          ? currentRequires.filter(t => t !== tag)
-          : [...currentRequires, tag]
-      };
-    });
-  };
+  // Removed requires handlers and tag dependencies helpers
 
   // Save changes and navigate to next chronological fragment
   const handleNextChronological = async () => {
@@ -814,16 +1013,7 @@ function EditorForm({
                       className="w-full px-3 py-2 bg-slate-950/60 border border-slate-800 rounded-lg text-sm text-slate-200 focus:outline-none focus:ring-1 focus:ring-indigo-500"
                     />
                   </div>
-                  <div className="space-y-1">
-                    <label className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Required Pool Count</label>
-                    <input
-                      type="number"
-                      value={metadata.required_pool_count}
-                      onChange={e => setMetadata(m => ({ ...m, required_pool_count: parseInt(e.target.value) || 0 }))}
-                      className="w-full px-3 py-2 bg-slate-950/60 border border-slate-800 rounded-lg text-sm text-slate-200 focus:outline-none focus:ring-1 focus:ring-indigo-500"
-                    />
-                  </div>
-                  <div className="space-y-1 md:col-span-2">
+                  <div className="space-y-1 md:col-span-3">
                     <label className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Warnings (comma separated)</label>
                     <input
                       type="text"
@@ -832,69 +1022,6 @@ function EditorForm({
                       className="w-full px-3 py-2 bg-slate-950/60 border border-slate-800 rounded-lg text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:ring-1 focus:ring-indigo-500"
                       placeholder="existential-dread, strong-language"
                     />
-                  </div>
-                </div>
-
-                {/* Tag-Based Requires Section */}
-                <div className="space-y-2 border-t border-slate-800/60 pt-4">
-                  <div className="space-y-1">
-                    <label className="text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center justify-between">
-                      <span>Requires (Tag dependencies, comma separated)</span>
-                      <span className="text-[10px] text-slate-500 font-normal">This fragment unlocks only after fragments containing these tags are read</span>
-                    </label>
-                    <input
-                      type="text"
-                      value={(metadata.requires || []).join(', ')}
-                      onChange={e => handleRequiresInput(e.target.value)}
-                      className="w-full px-3 py-2 bg-slate-950/60 border border-slate-800 rounded-lg text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:ring-1 focus:ring-indigo-500"
-                      placeholder="e.g. time-travel-basics, proposal"
-                    />
-                  </div>
-
-                  {/* Clickable System Tags List */}
-                  <div className="space-y-2 pt-2">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-medium text-slate-400">Available Tags in Narrative:</span>
-                      <input 
-                        type="text"
-                        placeholder="Filter available tags..."
-                        value={searchTagQuery}
-                        onChange={e => setSearchTagQuery(e.target.value)}
-                        className="bg-slate-950/40 border border-slate-850 px-2.5 py-1 rounded-md text-[11px] outline-none text-slate-300 focus:border-indigo-500/50 transition-colors"
-                      />
-                    </div>
-                    
-                    <div className="flex flex-wrap gap-2 max-h-48 overflow-y-auto p-2 bg-slate-950/30 rounded-xl border border-slate-800/80">
-                      {allTagsInSystem
-                        .filter(t => t.toLowerCase().includes(searchTagQuery.toLowerCase()))
-                        .map(tag => {
-                          const isSelected = (metadata.requires || []).includes(tag);
-                          return (
-                            <button
-                              key={tag}
-                              type="button"
-                              onClick={() => toggleRequireTag(tag)}
-                              className={`px-2.5 py-1 rounded-lg text-xs font-medium border transition-all flex items-center gap-1.5 cursor-pointer ${
-                                isSelected
-                                  ? 'bg-indigo-500/10 border-indigo-500 text-indigo-300 shadow-sm shadow-indigo-500/5'
-                                  : 'bg-slate-900 border-slate-800 text-slate-400 hover:border-slate-700 hover:text-slate-300'
-                              }`}
-                            >
-                              <span>{tag}</span>
-                              {isSelected ? (
-                                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                                  <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                                </svg>
-                              ) : (
-                                <span className="text-[10px] text-slate-600 font-semibold">+</span>
-                              )}
-                            </button>
-                          );
-                        })}
-                      {allTagsInSystem.length === 0 && (
-                        <span className="text-xs italic text-slate-500">No tags defined in narrative yet. Tag a fragment to add one here.</span>
-                      )}
-                    </div>
                   </div>
                 </div>
               </div>
@@ -1435,8 +1562,9 @@ function StageReorderer({ store, setEditorMode }: { store: any; setEditorMode: (
 
     const updates = orderedList.map((frag, idx) => {
       const newOrder = originalOrders[idx] ?? (idx * 10);
+      const targetId = frag.id === 'NEW' ? frag.metadata.id : frag.id;
       return {
-        id: frag.id,
+        id: targetId,
         metadata: {
           ...frag.metadata,
           chronological_order: newOrder
@@ -1459,7 +1587,8 @@ function StageReorderer({ store, setEditorMode }: { store: any; setEditorMode: (
     const frag = store.fragments.find((f: EditorFragment) => f.id === fragId);
     if (!frag) return;
 
-    await store.saveFragment(fragId, { ...frag.metadata, stage: newStage }, frag.content);
+    const targetId = frag.id === 'NEW' ? frag.metadata.id : frag.id;
+    await store.saveFragment(targetId, { ...frag.metadata, stage: newStage }, frag.content);
   };
 
   return (
@@ -1524,6 +1653,15 @@ function StageReorderer({ store, setEditorMode }: { store: any; setEditorMode: (
           </p>
         </div>
         <div className="flex items-center gap-3">
+          <button
+            onClick={() => {
+              store.createTemporaryFragment(selectedStage);
+              setEditorMode('write');
+            }}
+            className="text-xs bg-indigo-650 hover:bg-indigo-600 text-white px-3.5 py-2 rounded-xl border border-indigo-600 hover:border-indigo-500 transition-all font-medium flex items-center gap-1.5 cursor-pointer shadow-md shadow-indigo-600/10"
+          >
+            + New Fragment in {selectedStage ? selectedStage.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') : 'Unassigned'}
+          </button>
           {isOrderDirty && (
             <button
               onClick={() => {
@@ -1667,16 +1805,11 @@ function StageReorderer({ store, setEditorMode }: { store: any; setEditorMode: (
                   </p>
 
                   {/* Badges row */}
-                  {((frag.metadata.tags && frag.metadata.tags.length > 0) || (frag.metadata.requires && frag.metadata.requires.length > 0)) && (
+                  {frag.metadata.tags && frag.metadata.tags.length > 0 && (
                     <div className="flex flex-wrap gap-1.5 pt-1">
                       {(frag.metadata.tags || []).map(t => (
                         <span key={t} className="px-2 py-0.5 bg-slate-950/80 border border-slate-800 text-slate-500 rounded-md text-[9px] font-bold uppercase tracking-wider">
                           {t}
-                        </span>
-                      ))}
-                      {(frag.metadata.requires || []).map(r => (
-                        <span key={r} className="px-2 py-0.5 bg-indigo-950/45 border border-indigo-900/30 text-indigo-400 rounded-md text-[9px] font-bold uppercase tracking-wider" title={`Requires: ${r}`}>
-                          req: {r}
                         </span>
                       ))}
                     </div>

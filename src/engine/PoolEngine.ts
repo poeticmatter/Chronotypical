@@ -20,12 +20,7 @@ export function getNextDeterministicFragment(
   // If we read everything, we are done
   if (unreadPool.length === 0) return null;
 
-  // Filter 2: Threshold - Must have read at least `required_pool_count`
-  const thresholdPool = unreadPool.filter(
-    (frag) => readFragments.length >= frag.required_pool_count
-  );
-
-  const eligiblePool = thresholdPool;
+  const eligiblePool = unreadPool;
 
   // Handle Deadlocks
   if (eligiblePool.length === 0) {

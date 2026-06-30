@@ -35,8 +35,6 @@ function localEditorPlugin(): Plugin {
                   id: data.id || file.replace('.mdx', ''),
                   title: data.title || '',
                   chronological_order: data.chronological_order || 0,
-                  requires: data.requires || [],
-                  required_pool_count: data.required_pool_count || 0,
                   tags: data.tags || [],
                   warnings: data.warnings || [],
                   stage: data.stage || '',
@@ -119,12 +117,41 @@ function localEditorPlugin(): Plugin {
             res.statusCode = 400;
             return res.end(JSON.stringify({ error: 'Missing ID' }));
           }
-          const filePath = path.join(contentDir, `${id}.mdx`);
-          if (!fs.existsSync(filePath)) {
+
+          let fileToDelete: string | null = null;
+          try {
+            if (fs.existsSync(contentDir)) {
+              const files = fs.readdirSync(contentDir);
+              for (const file of files) {
+                if (!file.endsWith('.mdx')) continue;
+                const filePath = path.join(contentDir, file);
+                const fileContent = fs.readFileSync(filePath, 'utf8');
+                const { data } = matter(fileContent);
+                if (data.id === id || file.replace('.mdx', '') === id) {
+                  fileToDelete = filePath;
+                  break;
+                }
+              }
+            }
+          } catch (e) {
+            console.error('Error finding file for deletion:', e);
+          }
+
+          if (!fileToDelete) {
             res.statusCode = 404;
             return res.end(JSON.stringify({ error: 'Fragment not found' }));
           }
-          fs.unlinkSync(filePath);
+
+          fs.unlinkSync(fileToDelete);
+
+          // Re-run manifest parser
+          const buildManifestPath = path.resolve(__dirname, 'scripts/manifestParser.js');
+          import('child_process').then(cp => {
+             cp.exec(`node ${buildManifestPath}`, (err) => {
+                 if(err) console.error("Error building manifest after delete", err);
+             });
+          });
+
           res.setHeader('Content-Type', 'application/json');
           res.end(JSON.stringify({ success: true }));
           return;
@@ -185,12 +212,39 @@ function localEditorPlugin(): Plugin {
           req.on('end', () => {
             try {
               const { metadata, content } = JSON.parse(body);
-              const filePath = path.join(contentDir, `${id}.mdx`);
+              const targetId = id === 'NEW' ? metadata.id : id;
+              const filePath = path.join(contentDir, `${targetId}.mdx`);
+              
+              // Ensure we delete metadata-level requires and required_pool_count properties in saved frontmatter just in case
+              if (metadata) {
+                delete metadata.requires;
+                delete metadata.required_pool_count;
+              }
+
               const fileContent = matter.stringify(content, metadata);
 
               if (!fs.existsSync(contentDir)) {
                  fs.mkdirSync(contentDir, { recursive: true });
               }
+
+              // Clean up duplicate/orphaned files that have the same frontmatter ID but different filename
+              try {
+                const files = fs.readdirSync(contentDir);
+                for (const file of files) {
+                  if (!file.endsWith('.mdx')) continue;
+                  if (file === `${targetId}.mdx`) continue;
+                  const otherPath = path.join(contentDir, file);
+                  const otherContent = fs.readFileSync(otherPath, 'utf8');
+                  const { data } = matter(otherContent);
+                  if (data.id === targetId) {
+                    console.log(`[local-editor] Cleaning up duplicate fragment file: ${file}`);
+                    fs.unlinkSync(otherPath);
+                  }
+                }
+              } catch (e) {
+                console.error('Error cleaning up duplicate files:', e);
+              }
+
               fs.writeFileSync(filePath, fileContent);
 
               // Let's also re-run the manifest builder
@@ -198,7 +252,7 @@ function localEditorPlugin(): Plugin {
               import('child_process').then(cp => {
                  cp.exec(`node ${buildManifestPath}`, (err) => {
                      if(err) console.error("Error building manifest after save", err);
-                 });
+                  });
               });
 
               res.setHeader('Content-Type', 'application/json');

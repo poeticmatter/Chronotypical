@@ -24,8 +24,6 @@ function buildManifest() {
     const id = data.id || file.replace('.mdx', '');
     const title = data.title || '';
     const chronological_order = data.chronological_order || 0;
-    const requires = data.requires || [];
-    const required_pool_count = data.required_pool_count || 0;
     const tags = data.tags || [];
     const warnings = data.warnings || [];
     const stage = data.stage || '';
@@ -35,8 +33,6 @@ function buildManifest() {
       id,
       title,
       chronological_order,
-      requires,
-      required_pool_count,
       tags,
       warnings,
       stage,
